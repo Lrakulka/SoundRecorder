@@ -1,0 +1,3196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://www.solveitproblems.net/2010/04/java-sound-api-java.html -->
+<html class="v2 wf-ptsanscaption-n4-active wf-opensans-n4-active wf-opensans-n7-active wf-active" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=1100" name="viewport">
+
+<script src="./IT Problems  Java Sound API, Java и работа со звуком_files/cb=gapi.loaded_4" async=""></script><script src="./IT Problems  Java Sound API, Java и работа со звуком_files/cb=gapi.loaded_3" async=""></script><script src="./IT Problems  Java Sound API, Java и работа со звуком_files/cb=gapi.loaded_2" async=""></script><script src="./IT Problems  Java Sound API, Java и работа со звуком_files/cb=gapi.loaded_1" async=""></script><script src="./IT Problems  Java Sound API, Java и работа со звуком_files/cb=gapi.loaded_0" async=""></script><script src="./IT Problems  Java Sound API, Java и работа со звуком_files/webfont.js" type="text/javascript" async=""></script><script type="text/javascript">(function() { var b=window,f="chrome",g="tick",k="jstiming";(function(){function d(a){this.t={};this.tick=function(a,d,c){var e=void 0!=c?c:(new Date).getTime();this.t[a]=[e,d];if(void 0==c)try{b.console.timeStamp("CSI/"+a)}catch(h){}};this[g]("start",null,a)}var a;b.performance&&(a=b.performance.timing);var n=a?new d(a.responseStart):new d;b.jstiming={Timer:d,load:n};if(a){var c=a.navigationStart,h=a.responseStart;0<c&&h>=c&&(b[k].srt=h-c)}if(a){var e=b[k].load;0<c&&h>=c&&(e[g]("_wtsrt",void 0,c),e[g]("wtsrt_","_wtsrt",h),e[g]("tbsd_","wtsrt_"))}try{a=null,
+b[f]&&b[f].csi&&(a=Math.floor(b[f].csi().pageT),e&&0<c&&(e[g]("_tbnd",void 0,b[f].csi().startE),e[g]("tbnd_","_tbnd",c))),null==a&&b.gtbExternal&&(a=b.gtbExternal.pageT()),null==a&&b.external&&(a=b.external.pageT,e&&0<c&&(e[g]("_tbnd",void 0,b.external.startE),e[g]("tbnd_","_tbnd",c))),a&&(b[k].pt=a)}catch(p){}})();b.tickAboveFold=function(d){var a=0;if(d.offsetParent){do a+=d.offsetTop;while(d=d.offsetParent)}d=a;750>=d&&b[k].load[g]("aft")};var l=!1;function m(){l||(l=!0,b[k].load[g]("firstScrollTime"))}b.addEventListener?b.addEventListener("scroll",m,!1):b.attachEvent("onscroll",m);
+ })();</script>
+<meta content="blogger" name="generator">
+<link href="http://www.solveitproblems.net/favicon.ico" rel="icon" type="image/x-icon">
+<link href="./IT Problems  Java Sound API, Java и работа со звуком_files/IT Problems  Java Sound API, Java и работа со звуком.htm" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="IT Problems - Atom" href="http://www.solveitproblems.net/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="IT Problems - RSS" href="http://www.solveitproblems.net/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="IT Problems - Atom" href="http://www.blogger.com/feeds/3408374853382247347/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="IT Problems - Atom" href="http://www.solveitproblems.net/feeds/5834552165279329330/comments/default">
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/3147806688-ieretrofit.js"></script>
+<![endif]-->
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>IT Problems: Java Sound API, Java и работа со звуком</title>
+<script type="text/javascript">
+if (navigator.userAgent.indexOf('MSIE 6') == -1) {
+  WebFontConfig = {
+    google: { families: [ 'PT Sans Caption', 'Open Sans:regular,bold' ],
+    api: '//themes.googleusercontent.com/fonts/css?kit=iMc4-4exjgqA-toZgqqJBWALChYzn41NhZ595ehtm3Us4OrnQvh0ej45tC9z7fdji0VFtYL5QYM05M-QzgArgg'
+    },
+    loading: function() {
+      if (window.jstiming) window.jstiming.load.tick('webfontLoading');
+    },
+    active: function() {
+      if (window.jstiming) window.jstiming.load.tick('webfontActive');
+    }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+} else {
+  document.documentElement.className = 'wf-inactive';
+}
+</script>
+<style type="text/css">
+.wf-inactive body, .wf-opensans-n4-loading body, .wf-opensans-n4-inactive body {
+  font-family: sans-serif;
+}
+.wf-inactive .header h1, .wf-opensans-n7-loading .header h1, .wf-opensans-n7-inactive .header h1 {
+  font-family: sans-serif;
+}
+.wf-inactive .header .description, .wf-ptsanscaption-n4-loading .header .description, .wf-ptsanscaption-n4-inactive .header .description {
+  font-family: sans-serif;
+}
+.wf-inactive .main-inner .widget h2.date-header, .wf-opensans-n4-loading .main-inner .widget h2.date-header, .wf-opensans-n4-inactive .main-inner .widget h2.date-header, .wf-inactive .main-inner .widget h2.date-header span, .wf-opensans-n4-loading .main-inner .widget h2.date-header span, .wf-opensans-n4-inactive .main-inner .widget h2.date-header span {
+  font-family: sans-serif;
+}
+.wf-inactive h3.post-title, .wf-opensans-n7-loading h3.post-title, .wf-opensans-n7-inactive h3.post-title, .wf-inactive h4, .wf-opensans-n7-loading h4, .wf-opensans-n7-inactive h4, .wf-inactive h3.post-title a, .wf-opensans-n7-loading h3.post-title a, .wf-opensans-n7-inactive h3.post-title a {
+  font-family: sans-serif;
+}
+</style>
+<link type="text/css" rel="stylesheet" href="./IT Problems  Java Sound API, Java и работа со звуком_files/1535467126-widget_css_2_bundle.css">
+<link type="text/css" rel="stylesheet" href="./IT Problems  Java Sound API, Java и работа со звуком_files/gsearch.css">
+<link type="text/css" rel="stylesheet" href="./IT Problems  Java Sound API, Java и работа со звуком_files/authorization.css">
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Awesome Inc.
+Designer: Tina Chen
+URL:      tinachen.org
+----------------------------------------------- */
+/* Variable definitions
+====================
+<Variable name="keycolor" description="Main Color" type="color" default="#ffffff"/>
+<Group description="Page" selector="body">
+<Variable name="body.font" description="Font" type="font"
+default="normal normal 13px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="body.background.color" description="Background Color" type="color" default="#000000"/>
+<Variable name="body.text.color" description="Text Color" type="color" default="#ffffff"/>
+</Group>
+<Group description="Links" selector=".main-inner">
+<Variable name="link.color" description="Link Color" type="color" default="#888888"/>
+<Variable name="link.visited.color" description="Visited Color" type="color" default="#444444"/>
+<Variable name="link.hover.color" description="Hover Color" type="color" default="#cccccc"/>
+</Group>
+<Group description="Blog Title" selector=".header h1">
+<Variable name="header.font" description="Title Font" type="font"
+default="normal bold 40px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="header.text.color" description="Title Color" type="color" default="#444444" />
+<Variable name="header.background.color" description="Header Background" type="color" default="transparent" />
+</Group>
+<Group description="Blog Description" selector=".header .description">
+<Variable name="description.font" description="Font" type="font"
+default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="description.text.color" description="Text Color" type="color"
+default="#444444" />
+</Group>
+<Group description="Tabs Text" selector=".tabs-inner .widget li a">
+<Variable name="tabs.font" description="Font" type="font"
+default="normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="tabs.text.color" description="Text Color" type="color" default="#444444"/>
+<Variable name="tabs.selected.text.color" description="Selected Color" type="color" default="#444444"/>
+</Group>
+<Group description="Tabs Background" selector=".tabs-outer .PageList">
+<Variable name="tabs.background.color" description="Background Color" type="color" default="#141414"/>
+<Variable name="tabs.selected.background.color" description="Selected Color" type="color" default="#444444"/>
+<Variable name="tabs.border.color" description="Border Color" type="color" default="#eeeeee"/>
+</Group>
+<Group description="Date Header" selector=".main-inner .widget h2.date-header, .main-inner .widget h2.date-header span">
+<Variable name="date.font" description="Font" type="font"
+default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="date.text.color" description="Text Color" type="color" default="#666666"/>
+<Variable name="date.border.color" description="Border Color" type="color" default="#eeeeee"/>
+</Group>
+<Group description="Post Title" selector="h3.post-title, h4, h3.post-title a">
+<Variable name="post.title.font" description="Font" type="font"
+default="normal bold 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="post.title.text.color" description="Text Color" type="color" default="#444444"/>
+</Group>
+<Group description="Post Background" selector=".post">
+<Variable name="post.background.color" description="Background Color" type="color" default="#ffffff" />
+<Variable name="post.border.color" description="Border Color" type="color" default="#eeeeee" />
+<Variable name="post.border.bevel.color" description="Bevel Color" type="color" default="#eeeeee"/>
+</Group>
+<Group description="Gadget Title" selector="h2">
+<Variable name="widget.title.font" description="Font" type="font"
+default="normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="widget.title.text.color" description="Text Color" type="color" default="#444444"/>
+</Group>
+<Group description="Gadget Text" selector=".sidebar .widget">
+<Variable name="widget.font" description="Font" type="font"
+default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="widget.text.color" description="Text Color" type="color" default="#444444"/>
+<Variable name="widget.alternate.text.color" description="Alternate Color" type="color" default="#666666"/>
+</Group>
+<Group description="Gadget Links" selector=".sidebar .widget">
+<Variable name="widget.link.color" description="Link Color" type="color" default="#3778cd"/>
+<Variable name="widget.link.visited.color" description="Visited Color" type="color" default="#4d469c"/>
+<Variable name="widget.link.hover.color" description="Hover Color" type="color" default="#3778cd"/>
+</Group>
+<Group description="Gadget Background" selector=".sidebar .widget">
+<Variable name="widget.background.color" description="Background Color" type="color" default="#141414"/>
+<Variable name="widget.border.color" description="Border Color" type="color" default="#222222"/>
+<Variable name="widget.border.bevel.color" description="Bevel Color" type="color" default="#000000"/>
+</Group>
+<Group description="Sidebar Background" selector=".column-left-inner .column-right-inner">
+<Variable name="widget.outer.background.color" description="Background Color" type="color" default="transparent" />
+</Group>
+<Group description="Images" selector=".main-inner">
+<Variable name="image.background.color" description="Background Color" type="color" default="transparent"/>
+<Variable name="image.border.color" description="Border Color" type="color" default="transparent"/>
+</Group>
+<Group description="Feed" selector=".blog-feeds">
+<Variable name="feed.text.color" description="Text Color" type="color" default="#444444"/>
+</Group>
+<Group description="Feed Links" selector=".blog-feeds">
+<Variable name="feed.link.color" description="Link Color" type="color" default="#3778cd"/>
+<Variable name="feed.link.visited.color" description="Visited Color" type="color" default="#4d469c"/>
+<Variable name="feed.link.hover.color" description="Hover Color" type="color" default="#3778cd"/>
+</Group>
+<Group description="Pager" selector=".blog-pager">
+<Variable name="pager.background.color" description="Background Color" type="color" default="#ffffff" />
+</Group>
+<Group description="Footer" selector=".footer-outer">
+<Variable name="footer.background.color" description="Background Color" type="color" default="#ffffff" />
+<Variable name="footer.text.color" description="Text Color" type="color" default="#444444" />
+</Group>
+<Variable name="title.shadow.spread" description="Title Shadow" type="length" default="-1px"/>
+<Variable name="body.background" description="Body Background" type="background"
+color="#eeeeee"
+default="$(color) none repeat scroll top left"/>
+<Variable name="body.background.gradient.cap" description="Body Gradient Cap" type="url"
+default="none"/>
+<Variable name="body.background.size" description="Body Background Size" type="string" default="auto"/>
+<Variable name="tabs.background.gradient" description="Tabs Background Gradient" type="url"
+default="none"/>
+<Variable name="header.background.gradient" description="Header Background Gradient" type="url" default="none" />
+<Variable name="header.padding.top" description="Header Top Padding" type="length" default="22px" />
+<Variable name="header.margin.top" description="Header Top Margin" type="length" default="0" />
+<Variable name="header.margin.bottom" description="Header Bottom Margin" type="length" default="0" />
+<Variable name="widget.padding.top" description="Widget Padding Top" type="length" default="8px" />
+<Variable name="widget.padding.side" description="Widget Padding Side" type="length" default="15px" />
+<Variable name="widget.outer.margin.top" description="Widget Top Margin" type="length" default="0" />
+<Variable name="widget.outer.background.gradient" description="Gradient" type="url" default="none" />
+<Variable name="widget.border.radius" description="Gadget Border Radius" type="length" default="0" />
+<Variable name="outer.shadow.spread" description="Outer Shadow Size" type="length" default="0" />
+<Variable name="date.header.border.radius.top" description="Date Header Border Radius Top" type="length" default="0" />
+<Variable name="date.header.position" description="Date Header Position" type="length" default="15px" />
+<Variable name="date.space" description="Date Space" type="length" default="30px" />
+<Variable name="date.position" description="Date Float" type="string" default="static" />
+<Variable name="date.padding.bottom" description="Date Padding Bottom" type="length" default="0" />
+<Variable name="date.border.size" description="Date Border Size" type="length" default="0" />
+<Variable name="date.background" description="Date Background" type="background" color="transparent"
+default="$(color) none no-repeat scroll top left" />
+<Variable name="date.first.border.radius.top" description="Date First top radius" type="length" default="0" />
+<Variable name="date.last.space.bottom" description="Date Last Space Bottom" type="length"
+default="20px" />
+<Variable name="date.last.border.radius.bottom" description="Date Last bottom radius" type="length" default="0" />
+<Variable name="post.first.padding.top" description="First Post Padding Top" type="length" default="0" />
+<Variable name="image.shadow.spread" description="Image Shadow Size" type="length" default="0"/>
+<Variable name="image.border.radius" description="Image Border Radius" type="length" default="0"/>
+<Variable name="separator.outdent" description="Separator Outdent" type="length" default="15px" />
+<Variable name="title.separator.border.size" description="Widget Title Border Size" type="length" default="1px" />
+<Variable name="list.separator.border.size" description="List Separator Border Size" type="length" default="1px" />
+<Variable name="shadow.spread" description="Shadow Size" type="length" default="0"/>
+<Variable name="startSide" description="Side where text starts in blog language" type="automatic" default="left"/>
+<Variable name="endSide" description="Side where text ends in blog language" type="automatic" default="right"/>
+<Variable name="date.side" description="Side where date header is placed" type="string" default="right"/>
+<Variable name="pager.border.radius.top" description="Pager Border Top Radius" type="length" default="0" />
+<Variable name="pager.space.top" description="Pager Top Space" type="length" default="1em" />
+<Variable name="footer.background.gradient" description="Background Gradient" type="url" default="none" />
+<Variable name="mobile.background.size" description="Mobile Background Size" type="string"
+default="auto"/>
+<Variable name="mobile.background.overlay" description="Mobile Background Overlay" type="string"
+default="transparent none repeat scroll top left"/>
+<Variable name="mobile.button.color" description="Mobile Button Color" type="color" default="#ffffff" />
+*/
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 13px Open Sans;
+color: #444444;
+background: #eeeeee none repeat scroll top left;
+}
+html body .content-outer {
+min-width: 0;
+max-width: 100%;
+width: 100%;
+}
+a:link {
+text-decoration: none;
+color: #3778cd;
+}
+a:visited {
+text-decoration: none;
+color: #4d469c;
+}
+a:hover {
+text-decoration: underline;
+color: #3778cd;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 276px;
+width: 100%;
+background: transparent none repeat-x scroll top left;
+_background-image: none;
+}
+/* Columns
+----------------------------------------------- */
+.content-inner {
+padding: 0;
+}
+.header-inner .section {
+margin: 0 16px;
+}
+.tabs-inner .section {
+margin: 0 16px;
+}
+.main-inner {
+padding-top: 30px;
+}
+.main-inner .column-center-inner,
+.main-inner .column-left-inner,
+.main-inner .column-right-inner {
+padding: 0 5px;
+}
+*+html body .main-inner .column-center-inner {
+margin-top: -30px;
+}
+#layout .main-inner .column-center-inner {
+margin-top: 0;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+margin: 0 0 0 0;
+background: transparent none repeat scroll 0 0;
+}
+.Header h1 {
+font: normal bold 40px Open Sans;
+color: #444444;
+text-shadow: 0 0 -1px #000000;
+}
+.Header h1 a {
+color: #444444;
+}
+.Header .description {
+font: normal normal 14px PT Sans Caption;
+color: #444444;
+}
+.header-inner .Header .titlewrapper,
+.header-inner .Header .descriptionwrapper {
+padding-left: 0;
+padding-right: 0;
+margin-bottom: 0;
+}
+.header-inner .Header .titlewrapper {
+padding-top: 22px;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-outer {
+overflow: hidden;
+position: relative;
+background: #eeeeee url(http://www.blogblog.com/1kt/awesomeinc/tabs_gradient_light.png) repeat scroll 0 0;
+}
+#layout .tabs-outer {
+overflow: visible;
+}
+.tabs-cap-top, .tabs-cap-bottom {
+position: absolute;
+width: 100%;
+border-top: 1px solid #999999;
+}
+.tabs-cap-bottom {
+bottom: 0;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+margin: 0;
+padding: .6em 1.5em;
+font: normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #444444;
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+border-left: 1px solid #999999;
+height: 16px;
+line-height: 16px;
+}
+.tabs-inner .widget li:last-child a {
+border-right: 1px solid #999999;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+background: #666666 url(http://www.blogblog.com/1kt/awesomeinc/tabs_gradient_light.png) repeat-x scroll 0 -100px;
+color: #ffffff;
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+font: normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #444444;
+}
+/* Widgets
+----------------------------------------------- */
+.main-inner .section {
+margin: 0 27px;
+padding: 0;
+}
+.main-inner .column-left-outer,
+.main-inner .column-right-outer {
+margin-top: 0;
+}
+#layout .main-inner .column-left-outer,
+#layout .main-inner .column-right-outer {
+margin-top: 0;
+}
+.main-inner .column-left-inner,
+.main-inner .column-right-inner {
+background: transparent none repeat 0 0;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+#layout .main-inner .column-left-inner,
+#layout .main-inner .column-right-inner {
+margin-top: 0;
+}
+.sidebar .widget {
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #444444;
+}
+.sidebar .widget a:link {
+color: #3778cd;
+}
+.sidebar .widget a:visited {
+color: #4d469c;
+}
+.sidebar .widget a:hover {
+color: #3778cd;
+}
+.sidebar .widget h2 {
+text-shadow: 0 0 -1px #000000;
+}
+.main-inner .widget {
+background-color: #ffffff;
+border: 1px solid #eeeeee;
+padding: 0 15px 15px;
+margin: 20px -16px;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+.main-inner .widget h2 {
+margin: 0 -15px;
+padding: .6em 15px .5em;
+border-bottom: 1px solid transparent;
+}
+.footer-inner .widget h2 {
+padding: 0 0 .4em;
+border-bottom: 1px solid transparent;
+}
+.main-inner .widget h2 + div, .footer-inner .widget h2 + div {
+border-top: 1px solid #eeeeee;
+padding-top: 8px;
+}
+.main-inner .widget .widget-content {
+margin: 0 -15px;
+padding: 7px 15px 0;
+}
+.main-inner .widget ul, .main-inner .widget #ArchiveList ul.flat {
+margin: -8px -15px 0;
+padding: 0;
+list-style: none;
+}
+.main-inner .widget #ArchiveList {
+margin: -8px 0 0;
+}
+.main-inner .widget ul li, .main-inner .widget #ArchiveList ul.flat li {
+padding: .5em 15px;
+text-indent: 0;
+color: #666666;
+border-top: 1px solid #eeeeee;
+border-bottom: 1px solid transparent;
+}
+.main-inner .widget #ArchiveList ul li {
+padding-top: .25em;
+padding-bottom: .25em;
+}
+.main-inner .widget ul li:first-child, .main-inner .widget #ArchiveList ul.flat li:first-child {
+border-top: none;
+}
+.main-inner .widget ul li:last-child, .main-inner .widget #ArchiveList ul.flat li:last-child {
+border-bottom: none;
+}
+.post-body {
+position: relative;
+}
+.main-inner .widget .post-body ul {
+padding: 0 2.5em;
+margin: .5em 0;
+list-style: disc;
+}
+.main-inner .widget .post-body ul li {
+padding: 0.25em 0;
+margin-bottom: .25em;
+color: #444444;
+border: none;
+}
+.footer-inner .widget ul {
+padding: 0;
+list-style: none;
+}
+.widget .zippy {
+color: #666666;
+}
+/* Posts
+----------------------------------------------- */
+body .main-inner .Blog {
+padding: 0;
+margin-bottom: 1em;
+background-color: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.main-inner .section:last-child .Blog:last-child {
+padding: 0;
+margin-bottom: 1em;
+}
+.main-inner .widget h2.date-header {
+margin: 0 -15px 1px;
+padding: 0 0 0 0;
+font: normal normal 14px Open Sans;
+color: #444444;
+background: transparent none no-repeat scroll top left;
+border-top: 0 solid #eeeeee;
+border-bottom: 1px solid transparent;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+position: static;
+bottom: 100%;
+right: 15px;
+text-shadow: 0 0 -1px #000000;
+}
+.main-inner .widget h2.date-header span {
+font: normal normal 14px Open Sans;
+display: block;
+padding: .5em 15px;
+border-left: 0 solid #eeeeee;
+border-right: 0 solid #eeeeee;
+}
+.date-outer {
+position: relative;
+margin: 30px 0 20px;
+padding: 0 15px;
+background-color: #ffffff;
+border: 1px solid #eeeeee;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+.date-outer:first-child {
+margin-top: 0;
+}
+.date-outer:last-child {
+margin-bottom: 20px;
+-moz-border-radius-bottomleft: 0;
+-moz-border-radius-bottomright: 0;
+-webkit-border-bottom-left-radius: 0;
+-webkit-border-bottom-right-radius: 0;
+-goog-ms-border-bottom-left-radius: 0;
+-goog-ms-border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+}
+.date-posts {
+margin: 0 -15px;
+padding: 0 15px;
+clear: both;
+}
+.post-outer, .inline-ad {
+border-top: 1px solid #eeeeee;
+margin: 0 -15px;
+padding: 15px 15px;
+}
+.post-outer {
+padding-bottom: 10px;
+}
+.post-outer:first-child {
+padding-top: 0;
+border-top: none;
+}
+.post-outer:last-child, .inline-ad:last-child {
+border-bottom: none;
+}
+.post-body {
+position: relative;
+}
+.post-body img {
+padding: 8px;
+background: transparent;
+border: 1px solid transparent;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+h3.post-title, h4 {
+font: normal bold 22px Open Sans;
+color: #444444;
+}
+h3.post-title a {
+font: normal bold 22px Open Sans;
+color: #444444;
+}
+h3.post-title a:hover {
+color: #3778cd;
+text-decoration: underline;
+}
+.post-header {
+margin: 0 0 1em;
+}
+.post-body {
+line-height: 1.4;
+}
+.post-outer h2 {
+color: #444444;
+}
+.post-footer {
+margin: 1.5em 0 0;
+}
+#blog-pager {
+padding: 15px;
+font-size: 120%;
+background-color: #ffffff;
+border: 1px solid #eeeeee;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+-goog-ms-border-top-left-radius: 0;
+-goog-ms-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius-topright: 0;
+margin-top: 1em;
+}
+.blog-feeds, .post-feeds {
+margin: 1em 0;
+text-align: center;
+color: #444444;
+}
+.blog-feeds a, .post-feeds a {
+color: #3778cd;
+}
+.blog-feeds a:visited, .post-feeds a:visited {
+color: #4d469c;
+}
+.blog-feeds a:hover, .post-feeds a:hover {
+color: #3778cd;
+}
+.post-outer .comments {
+margin-top: 2em;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+}
+.comments .continue {
+border-top: 2px solid #999999;
+}
+/* Footer
+----------------------------------------------- */
+.footer-outer {
+margin: -20px 0 -1px;
+padding: 20px 0 0;
+color: #444444;
+overflow: hidden;
+}
+.footer-fauxborder-left {
+border-top: 1px solid #eeeeee;
+background: #ffffff none repeat scroll 0 0;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+margin: 0 -20px;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+*+html body.mobile .main-inner .column-center-inner {
+margin-top: 0;
+}
+.mobile .main-inner .widget {
+padding: 0 0 15px;
+}
+.mobile .main-inner .widget h2 + div,
+.mobile .footer-inner .widget h2 + div {
+border-top: none;
+padding-top: 0;
+}
+.mobile .footer-inner .widget h2 {
+padding: 0.5em 0;
+border-bottom: none;
+}
+.mobile .main-inner .widget .widget-content {
+margin: 0;
+padding: 7px 0 0;
+}
+.mobile .main-inner .widget ul,
+.mobile .main-inner .widget #ArchiveList ul.flat {
+margin: 0 -15px 0;
+}
+.mobile .main-inner .widget h2.date-header {
+right: 0;
+}
+.mobile .date-header span {
+padding: 0.4em 0;
+}
+.mobile .date-outer:first-child {
+margin-bottom: 0;
+border: 1px solid #eeeeee;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+-goog-ms-border-top-left-radius: 0;
+-goog-ms-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+.mobile .date-outer {
+border-color: #eeeeee;
+border-width: 0 1px 1px;
+}
+.mobile .date-outer:last-child {
+margin-bottom: 0;
+}
+.mobile .main-inner {
+padding: 0;
+}
+.mobile .header-inner .section {
+margin: 0;
+}
+.mobile .post-outer, .mobile .inline-ad {
+padding: 5px 0;
+}
+.mobile .tabs-inner .section {
+margin: 0 10px;
+}
+.mobile .main-inner .widget h2 {
+margin: 0;
+padding: 0;
+}
+.mobile .main-inner .widget h2.date-header span {
+padding: 0;
+}
+.mobile .main-inner .widget .widget-content {
+margin: 0;
+padding: 7px 0 0;
+}
+.mobile #blog-pager {
+border: 1px solid transparent;
+background: #ffffff none repeat scroll 0 0;
+}
+.mobile .main-inner .column-left-inner,
+.mobile .main-inner .column-right-inner {
+background: transparent none repeat 0 0;
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+-goog-ms-box-shadow: none;
+box-shadow: none;
+}
+.mobile .date-posts {
+margin: 0;
+padding: 0;
+}
+.mobile .footer-fauxborder-left {
+margin: 0;
+border-top: inherit;
+}
+.mobile .main-inner .section:last-child .Blog:last-child {
+margin-bottom: 0;
+}
+.mobile-index-contents {
+color: #444444;
+}
+.mobile .mobile-link-button {
+background: #3778cd url(http://www.blogblog.com/1kt/awesomeinc/tabs_gradient_light.png) repeat scroll 0 0;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background: transparent;
+border-top: 1px solid;
+border-color: #999999;
+color: #444444;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #999999;
+}
+
+--></style>
+<style id="template-skin-1" type="text/css"><!--
+body {
+min-width: 1010px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 1010px;
+max-width: 1010px;
+_width: 1010px;
+}
+.main-inner .columns {
+padding-left: 320px;
+padding-right: 0px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 320px;
+right: 0px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("320px") -
+parseInt("0px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 320px;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 0px;
+}
+.main-inner .column-left-outer {
+width: 320px;
+right: 100%;
+margin-left: -320px;
+}
+.main-inner .column-right-outer {
+width: 0px;
+margin-right: -0px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+--></style>
+<link rel="stylesheet" href="http://themes.googleusercontent.com/fonts/css?kit=iMc4-4exjgqA-toZgqqJBWALChYzn41NhZ595ehtm3Us4OrnQvh0ej45tC9z7fdji0VFtYL5QYM05M-QzgArgg"><script type="text/javascript">var a="indexOf",b="&m=1",e="(^|&)m=",f="?",g="?m=1";function h(){var c=window.location.href,d=c.split(f);switch(d.length){case 1:return c+g;case 2:return 0<=d[1].search(e)?null:c+b;default:return null}}var k=navigator.userAgent;if(-1!=k[a]("Mobile")&&-1!=k[a]("WebKit")&&-1==k[a]("iPad")||-1!=k[a]("Opera Mini")||-1!=k[a]("IEMobile")){var l=h();l&&window.location.replace(l)};
+</script><style type="text/css"></style><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/js/google_top_exp.js"></script><script type="text/javascript" src="./IT Problems  Java Sound API, Java и работа со звуком_files/saved_resource"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}</style><link type="text/css" href="./IT Problems  Java Sound API, Java и работа со звуком_files/default+ru.css" rel="stylesheet"><script type="text/javascript" src="./IT Problems  Java Sound API, Java и работа со звуком_files/default+ru.I.js"></script></head>
+<body class=" variant-light">
+<div class="navbar section" id="navbar"><div class="widget Navbar" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" width="100%" id="navbar-iframe" name="navbar-iframe" src="./IT Problems  Java Sound API, Java и работа со звуком_files/navbar.htm"></iframe></div>
+<script type="text/javascript" src="./IT Problems  Java Sound API, Java и работа со звуком_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+        gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+          if (gapi.iframes && gapi.iframes.getContext) {
+            gapi.iframes.getContext().openChild({
+                url: 'https://www.blogger.com/navbar.g?targetBlogID\0753408374853382247347\46blogName\75IT+Problems\46publishMode\75PUBLISH_MODE_HOSTED\46navbarType\75LIGHT\46layoutType\75LAYOUTS\46searchRoot\75http://www.solveitproblems.net/search\46blogLocale\75ru\46v\0752\46homepageUrl\75http://www.solveitproblems.net/\46targetPostID\0755834552165279329330\46blogPostOrPageUrl\75http://www.solveitproblems.net/2010/04/java-sound-api-java.html\46blogFollowUrl\75https://plus.google.com/108193929099577355334\46vt\75-4783024680971570612',
+                where: document.getElementById("navbar-iframe-container"),
+                id: "navbar-iframe"
+            });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class="body-fauxcolumns">
+<div class="fauxcolumn-outer body-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="content-fauxcolumns">
+<div class="fauxcolumn-outer content-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content-outer">
+<div class="content-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left content-fauxborder-left">
+<div class="fauxborder-right content-fauxborder-right"></div>
+<div class="content-inner">
+<header>
+<div class="header-outer">
+<div class="header-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left header-fauxborder-left">
+<div class="fauxborder-right header-fauxborder-right"></div>
+<div class="region-inner header-inner">
+<div class="header section" id="header"><div class="widget Header" id="Header1">
+<div id="header-inner">
+<a href="http://www.solveitproblems.net/" style="display: block">
+<img alt="IT Problems" height="180px; " id="Header1_headerimg" src="./IT Problems  Java Sound API, Java и работа со звуком_files/logo.png" style="display: block" width="180px; ">
+</a>
+<div class="descriptionwrapper">
+<p class="description"><span>Our IT Problems and their solving.</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="header-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</header>
+<div class="tabs-outer">
+<div class="tabs-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left tabs-fauxborder-left">
+<div class="fauxborder-right tabs-fauxborder-right"></div>
+<div class="region-inner tabs-inner">
+<div class="tabs section" id="crosscol"><div class="widget Text" id="Text1">
+<h2 class="title">SolveItproblems</h2>
+<div class="widget-content">
+<div style="float:left"><h3>SolveITProblems is a project of <a href="http://qformat.net/">QFormat.net</a> intellectual club</h3></div>   <div style="float:right; font-size: 12px; padding-top: 1px;"><h3>SolveITProblems это проект интеллектуального клуба <a href="http://qformat.net/">QFormat.net</a></h3></div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=Text&widgetId=Text1&action=editWidget&sectionId=crosscol" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Text1&quot;));" target="configText1" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+<div class="tabs section" id="crosscol-overflow"></div>
+</div>
+</div>
+<div class="tabs-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="main-outer">
+<div class="main-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left main-fauxborder-left">
+<div class="fauxborder-right main-fauxborder-right"></div>
+<div class="region-inner main-inner">
+<div class="columns fauxcolumns">
+<div class="fauxcolumn-outer fauxcolumn-center-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-left-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-right-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class="columns-inner">
+<div class="column-center-outer">
+<div class="column-center-inner">
+<div class="main section" id="main"><div id="uds-searchControl"><a name="uds-search-results"></a><div id="uds-searchResults"><div class="gsc-control" dir="ltr"><div class="gsc-results-wrapper-nooverlay"><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Этот блог</div><span class="gs-spacer"> </span><div tabindex="0" class=" gsc-tabHeader gsc-tabhInactive gsc-inline-block">Страницы, связанные ссылками с этой страницей</div><span class="gs-spacer"> </span><div tabindex="0" class=" gsc-tabHeader gsc-tabhInactive gsc-inline-block">Links</div><span class="gs-spacer"> </span></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td></tr></tbody></table></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Этот блог</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-more-results-active"><div class="gsc-result-selector gsc-one-result" title="показать один результат">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="показать другие результаты">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="показать все результаты">&nbsp;</div></div></td><td class="gsc-configLabelCell"><span class="gsc-configLabel gsc-twiddle-closed" title="настройки">&nbsp;</span></td></tr></tbody></table><div class="gsc-config gsc-blogConfig" style="display: none;"><form class="gsc-config gsc-blogConfig"></form></div><div><div class="gsc-expansionArea"></div></div></div><div class="gsc-resultsRoot gsc-tabData gsc-tabdInactive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Страницы, связанные ссылками с этой страницей</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-more-results-active"><div class="gsc-result-selector gsc-one-result" title="показать один результат">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="показать другие результаты">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="показать все результаты">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div><div class="gsc-resultsRoot gsc-tabData gsc-tabdInactive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Links</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-more-results-active"><div class="gsc-result-selector gsc-one-result" title="показать один результат">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="показать другие результаты">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="показать все результаты">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div></div><div id="uds-searchClearResults" class="gsc-clear-button" style="display: none;">&nbsp;</div></div><div class="widget Blog" id="Blog1">
+<div class="blog-posts hfeed">
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>четверг, 8 апреля 2010 г.</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry uncustomized-post-template" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="3408374853382247347" itemprop="blogId">
+<meta content="5834552165279329330" itemprop="postId">
+<a name="5834552165279329330"></a>
+<h3 class="post-title entry-title" itemprop="name">
+Java Sound API, Java и работа со звуком
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-5834552165279329330" itemprop="description articleBody">
+<div dir="ltr" style="text-align: left;" trbidi="on">Решил сделать одну простенькую программу для психологического тестирования, понадобилось запись голоса тестируемого. Около 15 минут и готовый в нете сампл записи звука в wav файл уже прочитан, понят, скомпилирован и протестирован. АПИ для работы со звуком уже в стандарте, т.е. ничего качать не надо. импортируем в проект<br>
+<br>
+<a name="more"></a><br>
+<br>
+import javax.sound.sampled.*;<br>
+<br>
+и ниже я привел код из Sun-овского примера чуть-чуть отредактированного мною, управляется все еще из командной строки но изменить это ничего не стоит.<br>
+<br>
+<pre><span style="font-family: &#39;courier new&#39;; font-style: italic;">import javax.sound.sampled.*;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">import java.io.*;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">import javax.sound.sampled.AudioFileFormat.Type;</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">public class JRecorder extends Thread    {</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        private TargetDataLine        m_line;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    private AudioFileFormat.Type    m_targetType;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    private AudioInputStream    m_audioInputStream;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    private File            m_outputFile;</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    public JRecorder(TargetDataLine m_line, Type m_targetType,  File m_outputFile) {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        this.m_line = m_line;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        this.m_targetType = m_targetType;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        this.m_audioInputStream = new AudioInputStream(m_line);</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        this.m_outputFile = m_outputFile;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    }</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    public void start()</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        m_line.start();</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        super.start();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    }</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        public void stopRecording()</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        m_line.stop();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        m_line.close();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    }</span>
+
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            public void run()</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            try</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                AudioSystem.write(</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                    m_audioInputStream,</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                    m_targetType,</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                    m_outputFile);</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            }</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            catch (IOException e)</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                e.printStackTrace();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            }</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">    }</span>
+
+
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                public static void main(String args[])</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                    File outputFile = new File("c:\\audiorec.wav");</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        AudioFormat    audioFormat = new AudioFormat(</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            AudioFormat.Encoding.PCM_SIGNED,</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            44100.0F, 16, 2, 4, 44100.0F, false);</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                DataLine.Info    info = new DataLine.Info(TargetDataLine.class, audioFormat);</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        TargetDataLine    targetDataLine = null;</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        try</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            targetDataLine = (TargetDataLine) AudioSystem.getLine(info);</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            targetDataLine.open(audioFormat);</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        }</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        catch (LineUnavailableException e)</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            System.out.println("unable to get a recording line");</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            e.printStackTrace();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            System.exit(1);</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        }</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                AudioFileFormat.Type    targetType = AudioFileFormat.Type.WAVE;</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                JRecorder j = new JRecorder(targetDataLine,targetType,outputFile);</span>
+
+
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                    System.out.println("Press ENTER to start the recording.");</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        try</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            System.in.read();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        }</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        catch (IOException e)</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            e.printStackTrace();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        }</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        /* Here, the recording is actually started.</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">         */</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        j.start();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        System.out.println("Recording...");</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">  </span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        System.out.println("Press ENTER to stop the recording.");</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        try</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            System.in.read();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        }</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        catch (IOException e)</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        {</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">            e.printStackTrace();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        }</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        j.stopRecording();</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">        System.out.println("Recording stopped.");</span>
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">                }</span>
+
+<span style="font-family: &#39;courier new&#39;; font-style: italic;">}
+
+</span></pre><br>
+<br>
+<span style="font-family: &#39;courier new&#39;;">Написать А</span><span style="font-family: &#39;courier new&#39;; font-style: italic;"><span style="font-style: italic;">удио плеер еще легче, привожу семпл код<br>
+</span></span><br>
+<pre><span style="font-family: &#39;courier new&#39;; font-style: italic;"><span style="font-style: italic;">import javax.sound.sampled.*;
+import java.io.*;
+
+public class JPlayer {
+
+String filename;
+AudioInputStream ais;
+
+public JPlayer(String filename) {
+this.filename = filename;
+this.initialize();
+}
+
+public void initialize()
+{
+try {
+ais = AudioSystem.getAudioInputStream(new File(filename));
+} catch (Exception e) {
+System.out.println("Exception in initializing. "+e);
+}
+
+AudioFormat format = ais.getFormat();
+
+SourceDataLine line = null;
+DataLine.Info    info = new DataLine.Info(SourceDataLine.class,format);
+
+try {
+line = (SourceDataLine) AudioSystem.getLine(info);
+line.open(format);
+line.start();
+
+int    nBytesRead = 0;
+byte[]    abData = new byte[128000];
+while (nBytesRead != -1)
+{
+try
+{
+nBytesRead = ais.read(abData, 0, abData.length);
+}
+catch (IOException e)
+{
+e.printStackTrace();
+}
+if (nBytesRead &gt;= 0)
+{
+int    nBytesWritten = line.write(abData, 0, nBytesRead);
+}
+}
+
+
+} catch (Exception e) {
+System.out.println("Exception in inintializing. getting line. "+e);
+}
+
+line.drain();
+line.close();
+}
+
+
+
+public static void main(String args[])
+{
+JPlayer jp = new JPlayer("C:\\audiorec.wav");
+}
+
+}
+</span></span></pre><span style="font-family: &#39;courier new&#39;; font-style: italic;"><span style="font-style: italic;"><br>
+</span></span></div>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1">
+<span class="post-author vcard">
+Автор:
+<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<meta content="https://plus.google.com/108193929099577355334" itemprop="url">
+<a class="g-profile" href="https://plus.google.com/108193929099577355334" rel="author" title="author profile" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+<span itemprop="name">Vusal Khalilov</span>
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+на
+<meta content="http://www.solveitproblems.net/2010/04/java-sound-api-java.html" itemprop="url">
+<a class="timestamp-link" href="./IT Problems  Java Sound API, Java и работа со звуком_files/IT Problems  Java Sound API, Java и работа со звуком.htm" rel="bookmark" title="permanent link"><abbr class="published" itemprop="datePublished" title="2010-04-08T14:33:00+05:00">14:33</abbr></a>
+</span>
+<span class="reaction-buttons">
+</span>
+<span class="star-ratings">
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-backlinks post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-action">
+<a href="http://www.blogger.com/email-post.g?blogID=3408374853382247347&postID=5834552165279329330" title="Отправить сообщение по электронной почте">
+<img alt="" class="icon-action" height="13" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_email.gif" width="18">
+</a>
+</span>
+<span class="item-control blog-admin pid-309564920">
+<a href="http://www.blogger.com/post-edit.g?blogID=3408374853382247347&postID=5834552165279329330&from=pencil" title="Изменить сообщение">
+<img alt="" class="icon-action" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_edit_allbkg.gif" width="18">
+</a>
+</span>
+</span>
+<div class="post-share-buttons goog-inline-block">
+<a class="goog-inline-block share-button sb-email" href="http://www.blogger.com/share-post.g?blogID=3408374853382247347&postID=5834552165279329330&target=email" target="_blank" title="Отправить по электронной почте"><span class="share-button-link-text">Отправить по электронной почте</span></a><a class="goog-inline-block share-button sb-blog" href="http://www.blogger.com/share-post.g?blogID=3408374853382247347&postID=5834552165279329330&target=blog" onclick="window.open(this.href, &quot;_blank&quot;, &quot;height=270,width=475&quot;); return false;" target="_blank" title="Написать об этом в блоге"><span class="share-button-link-text">Написать об этом в блоге</span></a><a class="goog-inline-block share-button sb-twitter" href="http://www.blogger.com/share-post.g?blogID=3408374853382247347&postID=5834552165279329330&target=twitter" target="_blank" title="Опубликовать в Twitter"><span class="share-button-link-text">Опубликовать в Twitter</span></a><a class="goog-inline-block share-button sb-facebook" href="http://www.blogger.com/share-post.g?blogID=3408374853382247347&postID=5834552165279329330&target=facebook" onclick="window.open(this.href, &quot;_blank&quot;, &quot;height=430,width=640&quot;); return false;" target="_blank" title="Опубликовать в Facebook"><span class="share-button-link-text">Опубликовать в Facebook</span></a><a class="goog-inline-block share-button sb-pinterest" href="http://www.blogger.com/share-post.g?blogID=3408374853382247347&postID=5834552165279329330&target=pinterest" target="_blank" title="Поделиться в Pinterest"><span class="share-button-link-text">Поделиться в Pinterest</span></a><div class="goog-inline-block dummy-container"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1407682196556" name="I0_1407682196556" src="./IT Problems  Java Sound API, Java и работа со звуком_files/fastbutton(1).htm" data-gapiattached="true" title="+1"></iframe></div></div>
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2">
+<span class="post-labels">
+Ярлыки:
+<a href="http://www.solveitproblems.net/search/label/AudioFileFormat" rel="tag">AudioFileFormat</a>,
+<a href="http://www.solveitproblems.net/search/label/audiorecording" rel="tag">audiorecording</a>,
+<a href="http://www.solveitproblems.net/search/label/java" rel="tag">java</a>,
+<a href="http://www.solveitproblems.net/search/label/java%20sound%20api" rel="tag">java sound api</a>,
+<a href="http://www.solveitproblems.net/search/label/sound" rel="tag">sound</a>,
+<a href="http://www.solveitproblems.net/search/label/wav" rel="tag">wav</a>,
+<a href="http://www.solveitproblems.net/search/label/%D0%B7%D0%B2%D1%83%D0%BA" rel="tag">звук</a>,
+<a href="http://www.solveitproblems.net/search/label/%D0%B7%D0%B2%D1%83%D0%BA%D0%BE%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C" rel="tag">звукозапись</a>,
+<a href="http://www.solveitproblems.net/search/label/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B2%D1%83%D0%BA%D0%BE%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8" rel="tag">программирование звукозаписи</a>,
+<a href="http://www.solveitproblems.net/search/label/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%D0%BE%20%D0%B7%D0%B2%D1%83%D0%BA%D0%BE%D0%BC" rel="tag">работа со звуком</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3">
+<span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>13 комментариев:</h4>
+<div class="comments-content">
+<script async="async" src="./IT Problems  Java Sound API, Java и работа со звуком_files/comments.js" type="text/javascript"></script>
+<script type="text/javascript">
+    (function() {
+      var items = [{'id': '450682171176205314', 'body': 'большое спасибо, очень помогло!', 'timestamp': '1282918681713', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751282918681713#c450682171176205314', 'author': {'name': 'Анонимный', 'avatarUrl': 'http://img1.blogblog.com/img/blank.gif', 'profileUrl': ''}, 'displayTime': '27 августа 2010 г., 19:18', 'deleteclass': 'item-control blog-admin pid-2144134878'}, {'id': '6992792960457364042', 'body': 'очень рад :) если будут вопросы пишите.', 'timestamp': '1286306475226', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751286306475226#c6992792960457364042', 'author': {'name': 'Maxima', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/17655122391382518184'}, 'displayTime': '6 октября 2010 г., 0:21', 'deleteclass': 'item-control blog-admin pid-309564920'}, {'id': '6595685068377674090', 'body': 'Привет! Спасибо большое за пример! Буду разбираться. Эта прога пишет в файл исходный звук, а как можно преобразовать его, например пустить через фильтр, а потом записать?', 'timestamp': '1294728417830', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751294728417830#c6595685068377674090', 'author': {'name': 'Анонимный', 'avatarUrl': 'http://img1.blogblog.com/img/blank.gif', 'profileUrl': ''}, 'displayTime': '11 января 2011 г., 10:46', 'deleteclass': 'item-control blog-admin pid-463434280'}, {'id': '3813582960001145513', 'body': 'Спасибо очень помогло!', 'timestamp': '1300053124047', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751300053124047#c3813582960001145513', 'author': {'name': 'Владимир', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/13370330000870766146'}, 'displayTime': '14 марта 2011 г., 1:52', 'deleteclass': 'item-control blog-admin pid-1208472728'}, {'id': '1174291803649137460', 'body': 'Thx:-)', 'timestamp': '1300361599408', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751300361599408#c1174291803649137460', 'author': {'name': 'Webber', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/15739200888893999176'}, 'displayTime': '17 марта 2011 г., 15:33', 'deleteclass': 'item-control blog-admin pid-2043548098'}, {'id': '352369260994017021', 'body': 'Сори за поздний ответ, сам фильтрами не занимался, но нашел в нете один интересный семпл, можете по нему сделать то что вам нужно\74br /\76\74br /\76http://www.java2s.com/Code/Java/Development-Class/Anexampleofplayingasoundwithanechofilter.htm\74br /\76\74br /\76п.с.\74br /\76Вам спасибо за комменты.', 'timestamp': '1300388590005', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751300388590005#c352369260994017021', 'author': {'name': 'Rendorf', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/17655122391382518184'}, 'displayTime': '17 марта 2011 г., 23:03', 'deleteclass': 'item-control blog-admin pid-309564920'}, {'id': '5698289577698169163', 'body': 'Добрый день. Подскажите пожалуйста, как можно организовать осциллограмму проигрываемого звука, знаете как в Winamp? И чтобы все происходило в режиме реального времени?', 'timestamp': '1302105551808', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751302105551808#c5698289577698169163', 'author': {'name': 'Анонимный', 'avatarUrl': 'http://img1.blogblog.com/img/blank.gif', 'profileUrl': ''}, 'displayTime': '6 апреля 2011 г., 20:59', 'deleteclass': 'item-control blog-admin pid-302945689'}, {'id': '2112536725471216124', 'body': 'Добрый!\74br /\76Здесь\74br /\76\74br /\76http://www.coderanch.com/t/382467/java/java/audio-visualization-graphics\74br /\76\74br /\76 есть код который делает то, что вам нужно. Хотя код там немножко страшный :) но жить можно, работать будет :) . Потом уже можете изменять функцию прорисовки и рисовать так как вы хотите и то что вы хотите.', 'timestamp': '1302526984671', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751302526984671#c2112536725471216124', 'author': {'name': 'Rendorf', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/17655122391382518184'}, 'displayTime': '11 апреля 2011 г., 18:03', 'deleteclass': 'item-control blog-admin pid-309564920'}, {'id': '8213185411646834849', 'body': 'Здравствуйте! есть пара вопросиков: \74br /\0761) как пустить звук в определенный канал (левый, например)?\74br /\0762) как в режиме реального времени вывести микрофон в колонки?\74br /\76з.ы. и еще как работать с аудиовыходами?', 'timestamp': '1305534791400', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751305534791400#c8213185411646834849', 'author': {'name': 'Frantic', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/07314114051681427978'}, 'displayTime': '16 мая 2011 г., 13:33', 'deleteclass': 'item-control blog-admin pid-1213900965'}, {'id': '7904359549055385430', 'body': 'Здравствуйте. ответы на ваш первый вопрос в примере которые можете увидеть пройдя по ссылке:\74br /\76 http://www.anyexample.com/programming/java/java_play_wav_sound_file.xml\74br /\76\74br /\76что касается режима реального времени для микрофона.. задача вроде не сложная но гугл никак не помог. Сам этого не делал, могу помочь лишь с алгоритмом:\74br /\76Можно сделать два потока в программе один который вечно считывает из микрофона (пример этого есть в самой статье) и Держит информацию порциями в каком-нибудь векторе внутри третьего класса служащего мостом между считыванием и исполнением.\74br /\76Второй поток запускается через каждые н доли секунды и исполняет очередной элемент вектора - порцию считанного микрофоном звука. Если \46quot;попадете\46quot; с интервалом второго потока то вроде должно все работать... Если сделаете так или найдете другое решение прошу поделиться...', 'timestamp': '1307710870387', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751307710870387#c7904359549055385430', 'author': {'name': 'Rendorf', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/17655122391382518184'}, 'displayTime': '10 июня 2011 г., 18:01', 'deleteclass': 'item-control blog-admin pid-309564920'}, {'id': '734754235873715958', 'body': 'Доброго времени суток!\74br /\76Вы не подскажете, как организовать регулированиe уровня громкости через \46quot;slider\46quot;?', 'timestamp': '1307799305493', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751307799305493#c734754235873715958', 'author': {'name': 'Анонимный', 'avatarUrl': 'http://img1.blogblog.com/img/blank.gif', 'profileUrl': ''}, 'displayTime': '11 июня 2011 г., 18:35', 'deleteclass': 'item-control blog-admin pid-2107965608'}, {'id': '242446330023012968', 'body': 'Можно так:\74br /\76\74br /\76SourceDataLine sdline;\74br /\76FloatControl control \75 (FloatControl) sdline.getControl(FloatControl.Type.VOLUME);\74br /\76control.setValue(значение вашего слайдера);\74br /\76\74br /\76перед тем как передавать значение слайдера умножьте его на коеффициент.  по-моему там от 0 до 1 он принимает.\74br /\76\74br /\76Есть еще и такой метод, его я в нете нашел:\74br /\76\74br /\76// Set Volume\74br /\76FloatControl gainControl \75 (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);\74br /\76double gain \75 .5D;    // number between 0 and 1 (loudest)\74br /\76float dB \75 (float)(Math.log(gain)/Math.log(10.0)*20.0);\74br /\76gainControl.setValue(dB);', 'timestamp': '1308071119894', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751308071119894#c242446330023012968', 'author': {'name': 'Rendorf', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/17655122391382518184'}, 'displayTime': '14 июня 2011 г., 22:05', 'deleteclass': 'item-control blog-admin pid-309564920'}, {'id': '915630734088828907', 'body': 'Спасибо большое, очень интересно и полезно!', 'timestamp': '1334112435912', 'permalink': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment\0751334112435912#c915630734088828907', 'author': {'name': 'Allysher', 'avatarUrl': 'http://img2.blogblog.com/img/b16-rounded.gif', 'profileUrl': 'http://www.blogger.com/profile/08112923976281317428'}, 'displayTime': '11 апреля 2012 г., 7:47', 'deleteclass': 'item-control blog-admin pid-316549065'}];
+      var msgs = {'loadMore': 'Ещё', 'loading': 'Загрузка...', 'loaded': 'Больше ничего нет.', 'addComment': 'Добавить комментарий', 'reply': 'Ответить', 'delete': 'Удалить'};
+      var config = {'blogId': '3408374853382247347', 'postId': '5834552165279329330', 'feed': 'http://www.solveitproblems.net/feeds/5834552165279329330/comments/default', 'authorName': 'Vusal Khalilov', 'authorUrl': 'http://www.blogger.com/profile/17655122391382518184', 'baseUri': 'http://www.blogger.com', 'maxThreadDepth': 2};
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        if (entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + entry.content.$t + '</span>';
+            }
+          }
+        }
+        return entry.content.$t;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
+                  comment.displayTime = entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+</script>
+<div id="comment-holder">
+
+<div id="bc_0_14C" kind="c"><div id="bc_0_14CT"><div id="bc_0_13T" class="comment-thread" kind="r" t="0" u="0"><ol id="bc_0_13TB"><li id="bc_0_0B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/anon36.png"></div><div id="c450682171176205314" class="comment-block"><div id="bc_0_0M" class="comment-header" kind="m"><cite class="user">Анонимный</cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1282918681713#c450682171176205314">27 августа 2010 г., 19:18</a></span></div><p id="bc_0_0MC" class="comment-content">большое спасибо, очень помогло!</p><span id="bc_0_0MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-2144134878"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=450682171176205314">Удалить</a></span></span></div><div id="bc_0_0BR" class="comment-replies"></div><div id="bc_0_0B_box" class="comment-replybox-single"></div></li><li id="bc_0_1B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c6992792960457364042" class="comment-block"><div id="bc_0_1M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/17655122391382518184">Maxima</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1286306475226#c6992792960457364042">6 октября 2010 г., 0:21</a></span></div><p id="bc_0_1MC" class="comment-content">очень рад :) если будут вопросы пишите.</p><span id="bc_0_1MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-309564920"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=6992792960457364042">Удалить</a></span></span></div><div id="bc_0_1BR" class="comment-replies"></div><div id="bc_0_1B_box" class="comment-replybox-single"></div></li><li id="bc_0_2B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/anon36.png"></div><div id="c6595685068377674090" class="comment-block"><div id="bc_0_2M" class="comment-header" kind="m"><cite class="user">Анонимный</cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1294728417830#c6595685068377674090">11 января 2011 г., 10:46</a></span></div><p id="bc_0_2MC" class="comment-content">Привет! Спасибо большое за пример! Буду разбираться. Эта прога пишет в файл исходный звук, а как можно преобразовать его, например пустить через фильтр, а потом записать?</p><span id="bc_0_2MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-463434280"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=6595685068377674090">Удалить</a></span></span></div><div id="bc_0_2BR" class="comment-replies"></div><div id="bc_0_2B_box" class="comment-replybox-single"></div></li><li id="bc_0_3B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c3813582960001145513" class="comment-block"><div id="bc_0_3M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/13370330000870766146">Владимир</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1300053124047#c3813582960001145513">14 марта 2011 г., 1:52</a></span></div><p id="bc_0_3MC" class="comment-content">Спасибо очень помогло!</p><span id="bc_0_3MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-1208472728"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=3813582960001145513">Удалить</a></span></span></div><div id="bc_0_3BR" class="comment-replies"></div><div id="bc_0_3B_box" class="comment-replybox-single"></div></li><li id="bc_0_4B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c1174291803649137460" class="comment-block"><div id="bc_0_4M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/15739200888893999176">Webber</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1300361599408#c1174291803649137460">17 марта 2011 г., 15:33</a></span></div><p id="bc_0_4MC" class="comment-content">Thx:-)</p><span id="bc_0_4MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-2043548098"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=1174291803649137460">Удалить</a></span></span></div><div id="bc_0_4BR" class="comment-replies"></div><div id="bc_0_4B_box" class="comment-replybox-single"></div></li><li id="bc_0_5B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c352369260994017021" class="comment-block"><div id="bc_0_5M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/17655122391382518184">Rendorf</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1300388590005#c352369260994017021">17 марта 2011 г., 23:03</a></span></div><p id="bc_0_5MC" class="comment-content">Сори за поздний ответ, сам фильтрами не занимался, но нашел в нете один интересный семпл, можете по нему сделать то что вам нужно<br><br>http://www.java2s.com/Code/Java/Development-Class/Anexampleofplayingasoundwithanechofilter.htm<br><br>п.с.<br>Вам спасибо за комменты.</p><span id="bc_0_5MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-309564920"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=352369260994017021">Удалить</a></span></span></div><div id="bc_0_5BR" class="comment-replies"></div><div id="bc_0_5B_box" class="comment-replybox-single"></div></li><li id="bc_0_6B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/anon36.png"></div><div id="c5698289577698169163" class="comment-block"><div id="bc_0_6M" class="comment-header" kind="m"><cite class="user">Анонимный</cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1302105551808#c5698289577698169163">6 апреля 2011 г., 20:59</a></span></div><p id="bc_0_6MC" class="comment-content">Добрый день. Подскажите пожалуйста, как можно организовать осциллограмму проигрываемого звука, знаете как в Winamp? И чтобы все происходило в режиме реального времени?</p><span id="bc_0_6MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-302945689"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=5698289577698169163">Удалить</a></span></span></div><div id="bc_0_6BR" class="comment-replies"></div><div id="bc_0_6B_box" class="comment-replybox-single"></div></li><li id="bc_0_7B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c2112536725471216124" class="comment-block"><div id="bc_0_7M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/17655122391382518184">Rendorf</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1302526984671#c2112536725471216124">11 апреля 2011 г., 18:03</a></span></div><p id="bc_0_7MC" class="comment-content">Добрый!<br>Здесь<br><br>http://www.coderanch.com/t/382467/java/java/audio-visualization-graphics<br><br> есть код который делает то, что вам нужно. Хотя код там немножко страшный :) но жить можно, работать будет :) . Потом уже можете изменять функцию прорисовки и рисовать так как вы хотите и то что вы хотите.</p><span id="bc_0_7MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-309564920"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=2112536725471216124">Удалить</a></span></span></div><div id="bc_0_7BR" class="comment-replies"></div><div id="bc_0_7B_box" class="comment-replybox-single"></div></li><li id="bc_0_8B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c8213185411646834849" class="comment-block"><div id="bc_0_8M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/07314114051681427978">Frantic</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1305534791400#c8213185411646834849">16 мая 2011 г., 13:33</a></span></div><p id="bc_0_8MC" class="comment-content">Здравствуйте! есть пара вопросиков: <br>1) как пустить звук в определенный канал (левый, например)?<br>2) как в режиме реального времени вывести микрофон в колонки?<br>з.ы. и еще как работать с аудиовыходами?</p><span id="bc_0_8MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-1213900965"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=8213185411646834849">Удалить</a></span></span></div><div id="bc_0_8BR" class="comment-replies"></div><div id="bc_0_8B_box" class="comment-replybox-single"></div></li><li id="bc_0_9B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c7904359549055385430" class="comment-block"><div id="bc_0_9M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/17655122391382518184">Rendorf</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1307710870387#c7904359549055385430">10 июня 2011 г., 18:01</a></span></div><p id="bc_0_9MC" class="comment-content">Здравствуйте. ответы на ваш первый вопрос в примере которые можете увидеть пройдя по ссылке:<br> http://www.anyexample.com/programming/java/java_play_wav_sound_file.xml<br><br>что касается режима реального времени для микрофона.. задача вроде не сложная но гугл никак не помог. Сам этого не делал, могу помочь лишь с алгоритмом:<br>Можно сделать два потока в программе один который вечно считывает из микрофона (пример этого есть в самой статье) и Держит информацию порциями в каком-нибудь векторе внутри третьего класса служащего мостом между считыванием и исполнением.<br>Второй поток запускается через каждые н доли секунды и исполняет очередной элемент вектора - порцию считанного микрофоном звука. Если "попадете" с интервалом второго потока то вроде должно все работать... Если сделаете так или найдете другое решение прошу поделиться...</p><span id="bc_0_9MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-309564920"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=7904359549055385430">Удалить</a></span></span></div><div id="bc_0_9BR" class="comment-replies"></div><div id="bc_0_9B_box" class="comment-replybox-single"></div></li><li id="bc_0_10B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/anon36.png"></div><div id="c734754235873715958" class="comment-block"><div id="bc_0_10M" class="comment-header" kind="m"><cite class="user">Анонимный</cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1307799305493#c734754235873715958">11 июня 2011 г., 18:35</a></span></div><p id="bc_0_10MC" class="comment-content">Доброго времени суток!<br>Вы не подскажете, как организовать регулированиe уровня громкости через "slider"?</p><span id="bc_0_10MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-2107965608"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=734754235873715958">Удалить</a></span></span></div><div id="bc_0_10BR" class="comment-replies"></div><div id="bc_0_10B_box" class="comment-replybox-single"></div></li><li id="bc_0_11B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c242446330023012968" class="comment-block"><div id="bc_0_11M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/17655122391382518184">Rendorf</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1308071119894#c242446330023012968">14 июня 2011 г., 22:05</a></span></div><p id="bc_0_11MC" class="comment-content">Можно так:<br><br>SourceDataLine sdline;<br>FloatControl control = (FloatControl) sdline.getControl(FloatControl.Type.VOLUME);<br>control.setValue(значение вашего слайдера);<br><br>перед тем как передавать значение слайдера умножьте его на коеффициент.  по-моему там от 0 до 1 он принимает.<br><br>Есть еще и такой метод, его я в нете нашел:<br><br>// Set Volume<br>FloatControl gainControl = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);<br>double gain = .5D;    // number between 0 and 1 (loudest)<br>float dB = (float)(Math.log(gain)/Math.log(10.0)*20.0);<br>gainControl.setValue(dB);</p><span id="bc_0_11MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-309564920"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=242446330023012968">Удалить</a></span></span></div><div id="bc_0_11BR" class="comment-replies"></div><div id="bc_0_11B_box" class="comment-replybox-single"></div></li><li id="bc_0_12B" class="comment" kind="b"><div class="avatar-image-container"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/b36-rounded.png"></div><div id="c915630734088828907" class="comment-block"><div id="bc_0_12M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/08112923976281317428">Allysher</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.solveitproblems.net/2010/04/java-sound-api-java.html?showComment=1334112435912#c915630734088828907">11 апреля 2012 г., 7:47</a></span></div><p id="bc_0_12MC" class="comment-content">Спасибо большое, очень интересно и полезно!</p><span id="bc_0_12MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Ответить</a><span class="item-control blog-admin pid-316549065"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=3408374853382247347&postID=915630734088828907">Удалить</a></span></span></div><div id="bc_0_12BR" class="comment-replies"></div><div id="bc_0_12B_box" class="comment-replybox-single"></div></li></ol><div id="bc_0_13I" class="continue" kind="ci" style="display: none;"><a href="javascript:;" target="_self">Добавить комментарий</a></div><div id="bc_0_13T_box" class="comment-replybox-thread"><iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="260px" id="comment-editor" name="comment-editor" src="./IT Problems  Java Sound API, Java и работа со звуком_files/comment-iframe.htm" width="100%" style="display: block;"></iframe></div><div id="bc_0_13L" class="loadmore loaded" kind="rb"><a href="javascript:;" target="_self">Ещё</a></div></div></div></div></div>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<p>
+</p>
+<a href="https://www.blogger.com/comment-iframe.g?blogID=3408374853382247347&postID=5834552165279329330&blogspotRpcToken=9251398" id="comment-editor-src"></a>
+
+<script type="text/javascript" src="./IT Problems  Java Sound API, Java и работа со звуком_files/250480443-comment_from_post_iframe.js"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html', '17358675608697382043');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container"><a name="links"></a><h4>Ссылки на это сообщение</h4>
+<p class="comment-footer">
+<a class="comment-link" href="http://www.blogger.com/blog-this.g" id="Blog1_backlinks-create-link" target="_blank">Создать ссылку</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- google_ad_section_end(name=default) -->
+<div class="inline-ad">
+<script type="text/javascript"><!--
+google_ad_client="pub-0672760233521773";
+google_ad_host="pub-1556223355139109";
+google_ad_width=468;
+google_ad_height=15;
+google_ad_format="468x15_0ads_al_s";
+google_ad_host_channel="0001";
+google_color_border="FFFFFF";
+google_color_bg="FFFFFF";
+google_color_link="336699";
+google_color_url="999999";
+google_color_text="333333";
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<!-- google_ad_section_start -->
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://www.solveitproblems.net/2010/04/smartxls-and-apache-poi.html" id="Blog1_blog-pager-newer-link" title="Следующее">Следующее</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://www.solveitproblems.net/2010/03/pdf-sharepoint.html" id="Blog1_blog-pager-older-link" title="Предыдущее">Предыдущее</a>
+</span>
+<a class="home-link" href="http://www.solveitproblems.net/">Главная страница</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Подписаться на:
+<a class="feed-link" href="http://www.solveitproblems.net/feeds/5834552165279329330/comments/default" target="_blank" type="application/atom+xml">Комментарии к сообщению (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'ru'};</script>
+</div></div>
+</div>
+</div>
+<div class="column-left-outer">
+<div class="column-left-inner">
+<aside>
+<div class="sidebar section" id="sidebar-left-1"><div class="widget CustomSearch" id="CustomSearch1">
+<h2 class="title">Поиск / Search</h2>
+<div class="widget-content">
+<div id="CustomSearch1_form"><form class="gsc-search-box" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><input autocomplete="off" type="text" size="10" class=" gsc-input" name="search" title="поиск"><input type="hidden" name="bgresponse" id="bgresponse"></td><td class="gsc-search-button"><input type="submit" value="Поиск" class="gsc-search-button" title="поиск"></td></tr></tbody></table><table cellspacing="0" cellpadding="0" class="gsc-branding"><tbody><tr style="display: none;"><td class="gsc-branding-user-defined"></td><td class="gsc-branding-text"><div class="gsc-branding-text">технология</div></td><td class="gsc-branding-img-noclear"><img src="./IT Problems  Java Sound API, Java и работа со звуком_files/small-logo.png" class="gsc-branding-img-noclear"></td></tr></tbody></table></form></div>
+</div>
+<style type="text/css">
+      #uds-searchControl .gs-result .gs-title,
+      #uds-searchControl .gs-result .gs-title *,
+      #uds-searchControl .gsc-results .gsc-trailing-more-results,
+      #uds-searchControl .gsc-results .gsc-trailing-more-results * {
+        color:#3778cd;
+      }
+
+      #uds-searchControl .gs-result .gs-title a:visited,
+      #uds-searchControl .gs-result .gs-title a:visited * {
+        color:#4d469c;
+      }
+
+      #uds-searchControl .gs-relativePublishedDate,
+      #uds-searchControl .gs-publishedDate {
+        color: #444444;
+      }
+
+      #uds-searchControl .gs-result a.gs-visibleUrl,
+      #uds-searchControl .gs-result .gs-visibleUrl {
+        color: #3778cd;
+      }
+
+      #uds-searchControl .gsc-results {
+        border-color: #999999;
+        background-color: #ffffff;
+      }
+
+      #uds-searchControl .gsc-tabhActive {
+        border-color: #999999;
+        border-top-color: #999999;
+        background-color: #ffffff;
+        color: #444444;
+      }
+
+      #uds-searchControl .gsc-tabhInactive {
+        border-color: #999999;
+        background-color: transparent;
+        color: #3778cd;
+      }
+
+      #uds-searchClearResults {
+        border-color: #999999;
+      }
+
+      #uds-searchClearResults:hover {
+        border-color: #999999;
+      }
+
+      #uds-searchControl .gsc-cursor-page {
+        color: #3778cd;
+      }
+
+      #uds-searchControl .gsc-cursor-current-page {
+        color: #444444;
+      }
+    </style>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=CustomSearch&widgetId=CustomSearch1&action=editWidget&sectionId=sidebar-left-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;CustomSearch1&quot;));" target="configCustomSearch1" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget PopularPosts" id="PopularPosts1">
+<h2>Популярные сообщения</h2>
+<div class="widget-content popular-posts">
+<ul>
+<li>
+<div class="item-thumbnail-only">
+<div class="item-title"><a href="http://www.solveitproblems.net/2011/04/removing-wow-slider-copyrights.html">Removing WOW Slider copyrights (UPDATE)</a></div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-thumbnail-only">
+<div class="item-title"><a href="http://www.solveitproblems.net/2012/06/google-drive-does-not-work-with-proxy.html">Google Drive does not work with proxy</a></div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-thumbnail-only">
+<div class="item-title"><a href="./IT Problems  Java Sound API, Java и работа со звуком_files/IT Problems  Java Sound API, Java и работа со звуком.htm">Java Sound API, Java и работа со звуком</a></div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-thumbnail-only">
+<div class="item-title"><a href="http://www.solveitproblems.net/2011/09/google.html">Выделение областей на картах Google</a></div>
+</div>
+<div style="clear: both;"></div>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=PopularPosts&widgetId=PopularPosts1&action=editWidget&sectionId=sidebar-left-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;PopularPosts1&quot;));" target="configPopularPosts1" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Label" id="Label2">
+<h2>Темы</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/java">java</a>
+<span dir="ltr">(21)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Others">Others</a>
+<span dir="ltr">(9)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/joomla">joomla</a>
+<span dir="ltr">(7)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Spring">Spring</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grails">grails</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Oracle">Oracle</a>
+<span dir="ltr">(5)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/mysql">mysql</a>
+<span dir="ltr">(5)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/mssql">mssql</a>
+<span dir="ltr">(4)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/php">php</a>
+<span dir="ltr">(4)</span>
+</li>
+<li>
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/web-hosting">web-hosting</a>
+<span dir="ltr">(1)</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=Label&widgetId=Label2&action=editWidget&sectionId=sidebar-left-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Label2&quot;));" target="configLabel2" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget HTML" id="HTML2">
+<h2 class="title">QFormat FB-Page</h2>
+<div class="widget-content">
+<iframe src="./IT Problems  Java Sound API, Java и работа со звуком_files/likebox.htm" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:230px; height:590px;" allowtransparency="true"></iframe>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=sidebar-left-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML2&quot;));" target="configHTML2" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" id="HTML1">
+<h2 class="title">QFormat on FB</h2>
+<div class="widget-content">
+<iframe src="./IT Problems  Java Sound API, Java и работа со звуком_files/activity.htm" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:230px; height:500px;" allowtransparency="true"></iframe>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar-left-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML1&quot;));" target="configHTML1" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget AdSense" id="AdSense1">
+<div class="widget-content">
+<script type="text/javascript"><!--
+google_ad_client="pub-0672760233521773";
+google_ad_host="pub-1556223355139109";
+google_ad_width=160;
+google_ad_height=600;
+google_ad_format="160x600_as";
+google_ad_type="text_image";
+google_ad_host_channel="0001";
+google_color_border="CCCCCC";
+google_color_bg="FFFFFF";
+google_color_link="000000";
+google_color_url="666666";
+google_color_text="333333";
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=AdSense&widgetId=AdSense1&action=editWidget&sectionId=sidebar-left-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;AdSense1&quot;));" target="configAdSense1" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget LinkList" id="LinkList1">
+<h2>Links</h2>
+<div class="widget-content">
+<ul>
+<li><a href="http://qformat.net/">QFormat - Say It Loud</a></li>
+<li><a href="http://adil.az/">Adil's blog</a></li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=LinkList&widgetId=LinkList1&action=editWidget&sectionId=sidebar-left-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;LinkList1&quot;));" target="configLinkList1" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</aside>
+</div>
+</div>
+<div class="column-right-outer">
+<div class="column-right-inner">
+<aside>
+</aside>
+</div>
+</div>
+</div>
+<div style="clear: both"></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class="main-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<footer>
+<div class="footer-outer">
+<div class="footer-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left footer-fauxborder-left">
+<div class="fauxborder-right footer-fauxborder-right"></div>
+<div class="region-inner footer-inner">
+<div class="foot section" id="footer-1"><div class="widget Label" id="Label1">
+<h2>Ярлыки</h2>
+<div class="widget-content cloud-label-widget-content">
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/.htaccess">.htaccess</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/.htpasswd">.htpasswd</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/2%20joomla%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D0%B5">2 joomla в одной базе</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/3417%20error">3417 error</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%3Ftp%3D1">?tp=1</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/_session">_session</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Access%20Denied%20Error%20When%20Trying%20to%20Access%20a%20Shared%20CD-ROM">Access Denied Error When Trying to Access a Shared CD-ROM</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/adding%20library%20to%20maven">adding library to maven</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/addlinkedserver">addlinkedserver</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/AOP">AOP</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/apache">apache</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Apache%20CXF">Apache CXF</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/apache%20poi">apache poi</a>
+<span class="label-count" dir="ltr">(3)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Apache%20tomcat">Apache tomcat</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/app%20locatino%20by%20port">app locatino by port</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/archive">archive</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/AspectJ">AspectJ</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/AudioFileFormat">AudioFileFormat</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/audiorecording">audiorecording</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/backup">backup</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/blogger">blogger</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/blogging">blogging</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/call%20skype%20html">call skype html</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/callablestatement">callablestatement</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/cannot%20read%20from%20session">cannot read from session</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/centos">centos</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/change%20site%20hosting">change site hosting</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/choose%20your%20jre%20version">choose your jre version</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/cisco">cisco</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/cisco%20port-security">cisco port-security</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/component%20for%20joomla">component for joomla</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/connection%20pool">connection pool</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/context.xml">context.xml</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/create%20schema%20in%20oracle">create schema in oracle</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/create%20trigger">create trigger</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/create%20user%20identified%20by">create user identified by</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/create%20user%20in%20oracle">create user in oracle</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Cron%20Job">Cron Job</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/CXF%20and%20AOP">CXF and AOP</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/data%20binding">data binding</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/database">database</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/DB%20function%20failed%20with%20error%20number%20145">DB function failed with error number 145</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/DecimalFormat">DecimalFormat</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/disk%20capacity">disk capacity</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/domains">domains</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/dos">dos</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/download%20file%20using%20grails">download file using grails</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/duplicate%20database">duplicate database</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/entity%20beans">entity beans</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/error%20145">error 145</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/excel">excel</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/excel%20and%20java">excel and java</a>
+<span class="label-count" dir="ltr">(3)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/execute%20oracle%20stored%20procedure%20from%20grails">execute oracle stored procedure from grails</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/export">export</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/external%20configuration%20files">external configuration files</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Facebook">Facebook</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Failed%20to%20lock%20the%20file">Failed to lock the file</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/file%20render%20groovy">file render groovy</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/foxit">foxit</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/freemarker">freemarker</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/ftl">ftl</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/fun">fun</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/generator%20tag">generator tag</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Glassfish">Glassfish</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Google%20Drive">Google Drive</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Google%20Drive%20with%20proxy">Google Drive with proxy</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/google%20maps%20api%20v3">google maps api v3</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grails">grails</a>
+<span class="label-count" dir="ltr">(6)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grails%20configuration">grails configuration</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grails%20DataSource%20externalize">grails DataSource externalize</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grails%20external%20properties">grails external properties</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grails%20image%20resizing">grails image resizing</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grails%20mysql%20to%20oracle">grails mysql to oracle</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grails%20oracle%20problem">grails oracle problem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grant%20all%20privileges">grant all privileges</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grep%20in%20archive">grep in archive</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grep%20in%20gz">grep in gz</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/grep%20%D0%B2%20%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B5">grep в архиве</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/groovy">groovy</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/gz">gz</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/habrahabr">habrahabr</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/harlem">harlem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/hosting">hosting</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/how%20to%20find%20tomcat%20location%20by%20port">how to find tomcat location by port</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/how%20to%20write%20to%20blog">how to write to blog</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/htaccess">htaccess</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/html">html</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/html%20table">html table</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/htpasswd">htpasswd</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/ibatis">ibatis</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/icon">icon</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/image%20resize">image resize</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/import">import</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/install%20pdf%20icon%20on%20sharepoint">install pdf icon on sharepoint</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-5">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/java">java</a>
+<span class="label-count" dir="ltr">(21)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/java%20and%20number%20formatting">java and number formatting</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/java%20sound%20api">java sound api</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/java%20systemtray%20example">java systemtray example</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/java%20timer">java timer</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/java%20%D0%B8%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%87%D0%B8%D1%81%D0%B5%D0%BB">java и форматирование чисел</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/JavaScript">JavaScript</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/jcombobox">jcombobox</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/jdbc">jdbc</a>
+<span class="label-count" dir="ltr">(4)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/jetty">jetty</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-4">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/joomla">joomla</a>
+<span class="label-count" dir="ltr">(7)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/joomla%202%20databases">joomla 2 databases</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/joomla%20databse%20error">joomla databse error</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/joomla%20header%20information">joomla header information</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/joomla%20open%20source%20content%20management%20system">joomla open source content management system</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Joomla%20%D0%BD%D0%B5%20%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B0%D0%B5%D1%82%20%D0%97%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BA%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F">Joomla не отображает Заголовок модуля</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/jquery">jquery</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/jre">jre</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/jsp">jsp</a>
+<span class="label-count" dir="ltr">(4)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/jTable">jTable</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/jTable%20and%20database">jTable and database</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/ldf">ldf</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/limit">limit</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/linux">linux</a>
+<span class="label-count" dir="ltr">(4)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/livestree%201.0.2">livestree 1.0.2</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/livestreet">livestreet</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/livestreet%200.5.1">livestreet 0.5.1</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/livestreet%201.0.1">livestreet 1.0.1</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/lost%20sql%20code">lost sql code</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-4">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/maven">maven</a>
+<span class="label-count" dir="ltr">(7)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/mdf">mdf</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/menu">menu</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/MessageContext%20problem">MessageContext problem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/meta%20tag">meta tag</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/ms%20sql%20server%202000%20and%20excel">ms sql server 2000 and excel</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/ms%20word">ms word</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/mssql">mssql</a>
+<span class="label-count" dir="ltr">(4)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/mvn%20file-install">mvn file-install</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/my%20reusable%20methods">my reusable methods</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/mybatis%20and%20spring">mybatis and spring</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/mysql">mysql</a>
+<span class="label-count" dir="ltr">(5)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/mysql%20jdbc%20unicode%20problem">mysql jdbc unicode problem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/nero%20burn%20problem">nero burn problem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Netbeans">Netbeans</a>
+<span class="label-count" dir="ltr">(4)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/netstat">netstat</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/nls_lang">nls_lang</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/number%20formatting">number formatting</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/number%20with%20E">number with E</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/object%20to%20string">object to string</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/offline%20blogging">offline blogging</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/online">online</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/open%20server">open server</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/ORA-02289%3A%20sequence%20does%20not%20exist">ORA-02289: sequence does not exist</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Oracle">Oracle</a>
+<span class="label-count" dir="ltr">(5)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Oracle%20SQL%20Developer">Oracle SQL Developer</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/other">other</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-4">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Others">Others</a>
+<span class="label-count" dir="ltr">(9)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/pdf%20ifilter">pdf ifilter</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/pdf%20problem">pdf problem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/periodically%20java%20method%20running%20in%20web%20application">periodically java method running in web application</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Photoshop%20online">Photoshop online</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/php">php</a>
+<span class="label-count" dir="ltr">(4)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/php%20file%20upload">php file upload</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/PHP%20File%20Upload%20Problem%20%28failed%20to%20open%20stream%3A%20Permission%20denied%20in%29">PHP File Upload Problem (failed to open stream: Permission denied in)</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/php%20get%20ip%20address">php get ip address</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/PHP%20Script">PHP Script</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/php4">php4</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/php5">php5</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/pl%2Fsql">pl/sql</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/polygons%20on%20google%20maps">polygons on google maps</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/postgresql">postgresql</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/proxy%20problem">proxy problem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/ps">ps</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/queries%20and%20excel">queries and excel</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/query%20to%20html%20table">query to html table</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/range%20of%20records">range of records</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/registerOutParameter">registerOutParameter</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/remove%20copyrght">remove copyrght</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/remove%20wowslider.com">remove wowslider.com</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/repair%20table">repair table</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/replication%20in%20mysql">replication in mysql</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/request.setCharacterEncoding%20%28%22UTF-8%22%29">request.setCharacterEncoding ("UTF-8")</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/restfull">restfull</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/restore%20sharepoint">restore sharepoint</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/restore%20sql%20code">restore sql code</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/rsynx.%20xinetd">rsynx. xinetd</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/run%20time%20after%20time">run time after time</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/scheduled%20job">scheduled job</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/search%20in%20gz">search in gz</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/search%20in%20tar">search in tar</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/server">server</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/server%20backup">server backup</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/servlet">servlet</a>
+<span class="label-count" dir="ltr">(3)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/session%20control">session control</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/session%20paramter%20error">session paramter error</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/shake">shake</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sharepoint">sharepoint</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sharepoint%20pdf">sharepoint pdf</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sharepoint%20search">sharepoint search</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/shell">shell</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/shiro%20in%20gsp">shiro in gsp</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/shiro%20plugin">shiro plugin</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/skype">skype</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/skype%20status%20icon">skype status icon</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/skype%20status%20in%20page">skype status in page</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/smartxls">smartxls</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sound">sound</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/source%20code%20highlighter">source code highlighter</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Spring">Spring</a>
+<span class="label-count" dir="ltr">(6)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/spring%20%2B%20mybatis">spring + mybatis</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/spring%20and%20freemarker">spring and freemarker</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/spring%20and%20json">spring and json</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/spring%20and%20multiple%20views">spring and multiple views</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/spring%20and%20xml">spring and xml</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Spring%20MVC">Spring MVC</a>
+<span class="label-count" dir="ltr">(5)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sql">sql</a>
+<span class="label-count" dir="ltr">(5)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sql%20query">sql query</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sql%20query%20jTable">sql query jTable</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sql%20to%20html%20table">sql to html table</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/sqlplus">sqlplus</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/ssh">ssh</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/status">status</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/stored%20procedure">stored procedure</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/stsadm">stsadm</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/submenu">submenu</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/system">system</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/system%20backup">system backup</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/systemtray">systemtray</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/tar">tar</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/template%20position%20disactivation">template position disactivation</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/tgz">tgz</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/thumbnailator">thumbnailator</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/timertask">timertask</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/tomcat%205.5">tomcat 5.5</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/top">top</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/top%20instead%20of%20limit">top instead of limit</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/toString%28%29">toString()</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/trigger">trigger</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/uml">uml</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/unicode%20problem">unicode problem</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/unix">unix</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/unix%20commands">unix commands</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/upload%20file%20using%20grails">upload file using grails</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/upload%20problem">upload problem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/URIEncoding%3D%22UTF-8%22">URIEncoding="UTF-8"</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/utf-8%20problem">utf-8 problem</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/vmware">vmware</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/WAMP">WAMP</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/wav">wav</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/web-hosting">web-hosting</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/web-services">web-services</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/web-site%20creation">web-site creation</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/webserver%20location%20by%20port">webserver location by port</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/wicket">wicket</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/wicket%20and%20netbeans">wicket and netbeans</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/Windows%20could%20not%20start%20the%20SQL%20Server">Windows could not start the SQL Server</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/WNMP">WNMP</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/word%20and%20java">word and java</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/wowslider%20slider%20copyrights">wowslider slider copyrights</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/write%20to%20blog%20from%20ms%20word">write to blog from ms word</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/wss">wss</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/xls">xls</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/xlsx">xlsx</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C">админ панель</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B0%D0%BF%D0%BB%D0%BE%D0%B0%D0%B4">аплоад</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C">безопасность</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B1%D0%B5%D0%BA%D0%B0%D0%BF">бекап</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D0%B5%D0%B1-%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3">веб-хостинг</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%B3%D0%B0%20%D0%B2%20%D0%BE%D1%84%D1%84%D0%BB%D0%B0%D0%B9%D0%BD%D0%B5">ведение блога в оффлайне</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%B3%D0%B0%20%D0%B8%D0%B7%20%D0%B2%D0%BE%D1%80%D0%B4%D0%B0">ведение блога из ворда</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">восстановление</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%D1%8B%20%D0%B8%D0%B7%20grails">вызов процедуры из grails</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%20%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BC%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80">вызов хранимых процедур</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D1%8B%D0%BF%D0%B0%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%20joomla">выпадающее меню на joomla</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D1%8B%D0%BF%D0%B0%D0%B4%D0%B0%D1%8E%D1%89%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%20%D0%B4%D0%B6%D1%83%D0%BC%D0%BB%D0%B0">выпадающее меню на джумла</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5">выполнение</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B8%D0%B7%20%D0%B1%D0%B0%D0%B7%D1%8B%20%D0%B2%20NetBeans">данные из базы в NetBeans</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B4%D0%B2%D0%B5%20%D0%B4%D0%B6%D1%83%D0%BC%D0%BB%D1%8B%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D0%B5">две джумлы в одной базе</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B4%D0%B6%D1%83%D0%BC%D0%BB%D0%B0">джумла</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD%D1%8B">домены</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B4%D1%83%D0%B1%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">дублирование</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D0%B4%D0%B8%D1%81%D0%BA">записать диск</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D0%B2%20excel">запрос в excel</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D0%B2%20jsp">запрос в jsp</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B7%D0%B2%D1%83%D0%BA">звук</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B7%D0%B2%D1%83%D0%BA%D0%BE%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C">звукозапись</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D0%BE%D0%B2%20%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B0%20%D0%BD%D0%B0%20grails">изменение размеров рисунка на grails</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82">импорт</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0">кодировка</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%20unix">команды unix</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%20%D0%B4%D0%BB%D1%8F%20joomla">компонент для joomla</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BB%D0%B8%D0%BD%D1%83%D0%BA%D1%81">линукс</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BC%D0%B5%D0%BD%D1%8E%20%D0%B4%D0%B6%D1%83%D0%BC%D0%BB%D0%B0">меню джумла</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%20%D0%B1%D0%B0%D0%B7%D1%8B%20145">ошибка базы 145</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%20%D0%B4%D0%B6%D1%83%D0%BC%D0%BB%D1%8B">ошибка джумлы</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%20%D0%BF%D1%80%D0%B8%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B5%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B0">ошибка при загрузке файла</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BF%D0%B4%D1%84%20%D0%B8%20%D1%88%D0%B5%D0%B9%D0%BF%D0%BE%D0%B8%D0%BD%D1%82">пдф и шейпоинт</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%B4%20%D0%BD%D0%B0%20java">периодически запускать код на java</a>
+<span class="label-count" dir="ltr">(2)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BF%D0%BE%D0%B4%D1%81%D0%B2%D0%B5%D1%82%D0%BA%D0%B0%20%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81%D0%B0">подсветка синтаксиса</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B8%20%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B0">поиск внутри архива</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%20%D0%BD%D0%B0%20wss">поиск на wss</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BF%D1%80%D0%B5%D1%80%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">прерывание</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0%20%D1%81%20%D1%8E%D0%BD%D0%B8%D0%BA%D0%BE%D0%B4%D0%BE%D0%BC">проблема с юникодом</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B2%D1%83%D0%BA%D0%BE%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8">программирование звукозаписи</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%D0%BE%20%D0%B7%D0%B2%D1%83%D0%BA%D0%BE%D0%BC">работа со звуком</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F">репликация</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%20MySQL">репликация MySQL</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%20MySQL%20%D0%BD%D0%B0%20Windows">репликация MySQL на Windows</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B1%D0%B0%D0%B7%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">репликация базы данных</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80">сервер</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2">создание сайтов</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%20%D0%B2%20%D0%BE%D1%80%D0%B0%D0%BA%D0%BB">создать пользователя в оракл</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D1%81%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82">создать свой сайт</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D1%81%D1%85%D0%B5%D0%BC%D1%83%20%D0%B2%20%D0%BE%D1%80%D0%B0%D0%BA%D0%BB">создать схему в оракл</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D1%8C%20%D0%B2%D0%BE%D1%80%D0%B4%20%D1%84%D0%B0%D0%B9%D0%BB%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D1%81%D0%B5%D1%80%D0%B2%D0%BB%D0%B5%D1%82">сохранить ворд файл через сервлет</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B0%D0%BC">справочник по команам</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%83%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C%20wowslider.com">удалить wowslider.com</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%87%D0%B8%D1%81%D0%B5%D0%BB%20%D0%BD%D0%B0%20Java">форматирование чисел на Java</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3">хостинг</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BC%D1%8B%D0%B5%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%D1%8B">хранимые процедуры</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%86%D0%B8%D1%81%D0%BA%D0%BE">циско</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%86%D0%B8%D1%84%D1%80%D1%8B%20%D1%81%20%D0%95">цифры с Е</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%88%D0%B5%D0%BB%D0%BB">шелл</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B0%D0%BD%D0%B4">шпаргалка комманд</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.solveitproblems.net/search/label/%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82">экспорт</a>
+<span class="label-count" dir="ltr">(1)</span>
+</span>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=footer-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Label1&quot;));" target="configLabel1" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+<table border="0" cellpadding="0" cellspacing="0" class="section-columns columns-2">
+<tbody>
+<tr>
+<td class="first columns-cell">
+<div class="foot section" id="footer-2-1"></div>
+</td>
+<td class="columns-cell">
+<div class="foot section" id="footer-2-2"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class="foot section" id="footer-3"><div class="widget Attribution" id="Attribution1">
+<div class="widget-content" style="text-align: center;">
+vusal.khalilov@gmail.com. Шаблон "Awesome Inc.". Технологии <a href="http://www.blogger.com/" target="_blank">Blogger</a>.
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=3408374853382247347&widgetType=Attribution&widgetId=Attribution1&action=editWidget&sectionId=footer-3" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Attribution1&quot;));" target="configAttribution1" title="Изменить">
+<img alt="" height="18" src="./IT Problems  Java Sound API, Java и работа со звуком_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div class="footer-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class="content-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="./IT Problems  Java Sound API, Java и работа со звуком_files/1093374584-widgets.js"></script>
+<script type="text/javascript" src="./IT Problems  Java Sound API, Java и работа со звуком_files/jsapi"></script>
+<script type="text/javascript" src="./IT Problems  Java Sound API, Java и работа со звуком_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV2";window['blogger_blog_id'] = '3408374853382247347';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d3408374853382247347','//www.solveitproblems.net/2010/04/java-sound-api-java.html','3408374853382247347');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '3408374853382247347', 'bloggerUrl': 'http://www.blogger.com', 'title': 'IT Problems', 'pageType': 'item', 'postId': '5834552165279329330', 'url': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html', 'canonicalUrl': 'http://www.solveitproblems.net/2010/04/java-sound-api-java.html', 'canonicalHomepageUrl': 'http://www.solveitproblems.net/', 'homepageUrl': 'http://www.solveitproblems.net/', 'blogspotFaviconUrl': 'http://www.solveitproblems.net/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'Java Sound API, Java и работа со звуком', 'pageTitle': 'IT Problems: Java Sound API, Java и работа со звуком', 'encoding': 'UTF-8', 'locale': 'ru', 'localeUnderscoreDelimited': 'ru', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42IT Problems - Atom\42 href\75\42http://www.solveitproblems.net/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42IT Problems - RSS\42 href\75\42http://www.solveitproblems.net/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42IT Problems - Atom\42 href\75\42http://www.blogger.com/feeds/3408374853382247347/posts/default\42 /\76\n\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42IT Problems - Atom\42 href\75\42http://www.solveitproblems.net/feeds/5834552165279329330/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var b\75window,f\75\42chrome\42,g\75\42tick\42,k\75\42jstiming\42;(function(){function d(a){this.t\75{};this.tick\75function(a,d,c){var e\75void 0!\75c?c:(new Date).getTime();this.t[a]\75[e,d];if(void 0\75\75c)try{b.console.timeStamp(\42CSI/\42+a)}catch(h){}};this[g](\42start\42,null,a)}var a;b.performance\46\46(a\75b.performance.timing);var n\75a?new d(a.responseStart):new d;b.jstiming\75{Timer:d,load:n};if(a){var c\75a.navigationStart,h\75a.responseStart;0\74c\46\46h\76\75c\46\46(b[k].srt\75h-c)}if(a){var e\75b[k].load;0\74c\46\46h\76\75c\46\46(e[g](\42_wtsrt\42,void 0,c),e[g](\42wtsrt_\42,\42_wtsrt\42,h),e[g](\42tbsd_\42,\42wtsrt_\42))}try{a\75null,\nb[f]\46\46b[f].csi\46\46(a\75Math.floor(b[f].csi().pageT),e\46\0460\74c\46\46(e[g](\42_tbnd\42,void 0,b[f].csi().startE),e[g](\42tbnd_\42,\42_tbnd\42,c))),null\75\75a\46\46b.gtbExternal\46\46(a\75b.gtbExternal.pageT()),null\75\75a\46\46b.external\46\46(a\75b.external.pageT,e\46\0460\74c\46\46(e[g](\42_tbnd\42,void 0,b.external.startE),e[g](\42tbnd_\42,\42_tbnd\42,c))),a\46\46(b[k].pt\75a)}catch(p){}})();b.tickAboveFold\75function(d){var a\0750;if(d.offsetParent){do a+\75d.offsetTop;while(d\75d.offsetParent)}d\75a;750\76\75d\46\46b[k].load[g](\42aft\42)};var l\75!1;function m(){l||(l\75!0,b[k].load[g](\42firstScrollTime\42))}b.addEventListener?b.addEventListener(\42scroll\42,m,!1):b.attachEvent(\42onscroll\42,m);\n })();\74/script\076', 'mobileHeadScript': '', 'adsenseClientId': 'pub-0672760233521773', 'ieCssRetrofitLinks': '\74!--[if IE]\76\74script type\75\42text/javascript\42 src\75\42https://www.blogger.com/static/v1/jsbin/3147806688-ieretrofit.js\42\76\74/script\76\n\74![endif]--\076', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/76f25a6f2e06af76', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sf': 'n', 'tf': ''}}, {'name': 'skin', 'data': {'vars': {'date_border_size': '0', 'description_font': 'normal normal 14px PT Sans Caption', 'body_background_gradient_cap': 'none', 'tabs_selected_background_color': '#666666', 'footer_background_gradient': 'none', 'date_background': 'transparent none no-repeat scroll top left', 'widget_border_radius': '0', 'post_title_text_color': '#444444', 'widget_font': 'normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif', 'widget_link_hover_color': '#3778cd', 'link_visited_color': '#4d469c', 'mobile_background_size': 'auto', 'date_space': '30px', 'post_title_font': 'normal bold 22px Open Sans', 'tabs_text_color': '#444444', 'title_separator_border_size': '1px', 'header_background_gradient': 'none', 'widget_outer_background_gradient': 'none', 'widget_link_color': '#3778cd', 'mobile_button_color': '#ffffff', 'widget_title_font': 'normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif', 'widget_outer_background_color': 'transparent', 'date_last_border_radius_bottom': '0', 'widget_outer_margin_top': '0', 'shadow_spread': '20px', 'title_shadow_spread': '-1px', 'outer_shadow_spread': '0', 'keycolor': '#eeeeee', 'image_shadow_spread': '0', 'image_background_color': 'transparent', 'header_font': 'normal bold 40px Open Sans', 'header_background_color': 'transparent', 'date_header_border_radius_top': '0', 'widget_border_bevel_color': 'transparent', 'tabs_border_color': '#999999', 'widget_background_color': '#ffffff', 'date_position': 'static', 'post_first_padding_top': '0', 'tabs_background_gradient': 'url(http://www.blogblog.com/1kt/awesomeinc/tabs_gradient_light.png)', 'mobile_background_overlay': 'transparent none repeat scroll top left', 'date_border_color': '#eeeeee', 'tabs_background_color': '#eeeeee', 'widget_link_visited_color': '#4d469c', 'feed_text_color': '#444444', 'header_margin_top': '0', 'link_hover_color': '#3778cd', 'date_last_space_bottom': '20px', 'header_margin_bottom': '0', 'date_padding_bottom': '0', 'list_separator_border_size': '1px', 'description_text_color': '#444444', 'body_text_color': '#444444', 'header_padding_top': '22px', 'post_border_color': '#eeeeee', 'footer_text_color': '#444444', 'post_background_color': '#ffffff', 'pager_space_top': '1em', 'endSide': 'right', 'startSide': 'left', 'body_background_size': 'auto', 'tabs_font': 'normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif', 'body_font': 'normal normal 13px Open Sans', 'date_first_border_radius_top': '0', 'date_header_position': '15px', 'date_text_color': '#444444', 'widget_title_text_color': '#444444', 'image_border_color': 'transparent', 'separator_outdent': '15px', 'widget_text_color': '#444444', 'link_color': '#3778cd', 'widget_border_color': '#eeeeee', 'pager_border_radius_top': '0', 'feed_link_color': '#3778cd', 'header_text_color': '#444444', 'footer_background_color': '#ffffff', 'widget_padding_top': '8px', 'feed_link_visited_color': '#4d469c', 'feed_link_hover_color': '#3778cd', 'date_font': 'normal normal 14px Open Sans', 'tabs_selected_text_color': '#ffffff', 'date_side': 'right', 'post_border_bevel_color': '#eeeeee', 'widget_padding_side': '15px', 'body_background_color': '#eeeeee', 'image_border_radius': '0', 'pager_background_color': '#ffffff', 'widget_alternate_text_color': '#666666'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_TextView', new _WidgetInfo('Text1', 'crosscol', null, document.getElementById('Text1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_CustomSearchView', new _WidgetInfo('CustomSearch1', 'sidebar-left-1', null, document.getElementById('CustomSearch1'), {'title': 'Поиск / Search', 'includeBlog': true, 'includePostLinks': true, 'includeWeb': false, 'linkLists': [{'id': 'LinkList1', 'title': 'Links'}], 'blogUrl': 'http://www.solveitproblems.net/', 'loadingMsg': 'Загрузка...', 'thisBlogMsg': 'Этот блог', 'linkedFromHereMsg': 'Страницы, связанные ссылками с этой страницей', 'theWebMsg': 'Интернет', 'backgroundColor': '#ffffff', 'textColor': '#444444', 'dateColor': '#444444', 'linkColor': '#3778cd', 'urlColor': '#3778cd', 'visitedLinkColor': '#4d469c', 'borderColor': '#999999', 'activeBorderColor': '#999999'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebar-left-1', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label2', 'sidebar-left-1', null, document.getElementById('Label2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebar-left-1', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-left-1', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense1', 'sidebar-left-1', null, document.getElementById('AdSense1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar-left-1', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', null, document.getElementById('Attribution1'), {'attribution': 'vusal.khalilov@gmail.com. Шаблон \42Awesome Inc.\42. Технологии \74a href\75\47http://www.blogger.com\47 target\75\47_blank\47\76Blogger\74/a\76.'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'footer-1', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '5834552165279329330', 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2569541304-lbx__ru.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/2392111094-lightbox_bundle.css'}, 'displayModeFull'));
+</script>
+
+<iframe name="oauth2relay737140540" id="oauth2relay737140540" src="./IT Problems  Java Sound API, Java и работа со звуком_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>
