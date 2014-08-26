@@ -15,12 +15,13 @@ public class Interface extends Thread{
     private DrawDiagram drawDiagram;
     private JFrame frame;
     private boolean status;
-    private int[] buff;
+    private byte[][] buff;
 	private int lengthBuff;
 	private int arg;
 	private StopThread stopInputStream;
 	private MyWindowListener myWindowListener;
 	
+	//Creation of user interface
     public Interface(){
     	lengthBuff = 0;
     	drawDiagram = new DrawDiagram();
@@ -32,14 +33,16 @@ public class Interface extends Thread{
     	JTextField edit = new JTextField("Write directory of record or play file");
 		edit.setPreferredSize(new Dimension(200, 50));
 		edit.setMargin(new Insets(5, 20, 5, 20));   
-		
     	JButton buttonStartPlay = new JButton("Start Play Record");
     	buttonStartPlay.setPreferredSize(new Dimension(200, 50));    	
-    	buttonStartPlay.addActionListener(new MyActionListenerForPlayer(this, buttonStartPlay, edit));
     	
     	JButton buttonRecordStar = new JButton("Start Record Sound");
     	buttonRecordStar.setPreferredSize(new Dimension(200, 50));
-    	buttonRecordStar.addActionListener(new MyActionListenerForRecord(this, buttonRecordStar, edit));
+    	
+    	buttonRecordStar.addActionListener(new MyActionListenerForRecord(this, buttonRecordStar, 
+    			edit, buttonStartPlay));
+    	buttonStartPlay.addActionListener(new MyActionListenerForPlayer(this, buttonStartPlay, 
+    			edit, buttonRecordStar));
     	
     	frame.add(drawDiagram, BorderLayout.NORTH);  
     	frame.add(buttonStartPlay, BorderLayout.EAST);
@@ -71,24 +74,27 @@ public class Interface extends Thread{
 	    }
 	}
 	
-	public void updateDiagram(int arg0){
-		buff[lengthBuff] = arg0;
+	public void updateDiagram(byte[] buff){
+		this.buff[lengthBuff] = buff;
 		lengthBuff++;
 	}
 	
+	//Prepare data for diagram
 	private int getArgs(){
 		//-------//
-		if(lengthBuff > 0)
-			arg = buff[lengthBuff - 1];
+		if(lengthBuff != 0 && buff != null)
+			arg = (int) buff[lengthBuff - 1][0];
 		else arg = 0;
 		lengthBuff = 0;
 		//-------//
 		return arg;
 	}
-
+	
+	// Bind input data from recorder or player with diagram. Gives interface method for closing thread. 
 	public Interface DataSourthForDiagram(StopThread stopInputStream){
-    	int l = 1000 * Optiums.SAMPLE_RATE / Optiums.THREAD_SLEEPING;
-    	buff = new int[(int) (l + l * 0.2)];
+		// Size of data store buffer
+    	int l = 1000 * Optiums.SAMPLE_RATE / (Optiums.THREAD_SLEEPING * Optiums.BUFF_SIZE);
+    	buff = new byte[(int) (l + l * 0.2)][];
     	this.stopInputStream = stopInputStream;
     	myWindowListener = new MyWindowListener(this);
     	frame.addWindowListener(myWindowListener);

@@ -22,7 +22,7 @@ class DrawDiagram extends Canvas{
 	void makeCanvas(){
     	bs = getBufferStrategy(); 
 	    if (bs == null) {
-	        createBufferStrategy(2); //создаем BufferStrategy для нашего холста
+	        createBufferStrategy(2); 
 	        requestFocus();
 	        bs = getBufferStrategy(); 
 	    }

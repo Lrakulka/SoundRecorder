@@ -10,9 +10,10 @@ import javax.swing.JTextField;
 import soundDiagram.Optiums;
 import soundDiagram.Player;
 
+// Action Listener for button Player
 public class MyActionListenerForPlayer implements ActionListener{
 	private Interface interf;
-	private JButton button;
+	private JButton button, buttonRecorder;
 	private Player player;
     private JTextField edit;
     
@@ -23,11 +24,20 @@ public class MyActionListenerForPlayer implements ActionListener{
 			player.stopThread();
 			interf.deleteMyWindowListener();
 			button.setText("Start Play Record");
-		}else{			
+			if(Optiums.DISABLES_BUTTONS)
+				buttonRecorder.setEnabled(true);
+		}else{		
+			if(Optiums.DISABLES_BUTTONS)
+				buttonRecorder.setEnabled(false);
 			File fileDir = new File(edit.getText() +"." +  Optiums.FILE_TYPE.toString().toLowerCase());
-			if(fileDir.isFile()){
-				player = new Player(fileDir, button);
-				player.start(interf);
+			if(fileDir.exists()){
+				try {
+					player = new Player(fileDir, button);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				player.start(interf.DataSourthForDiagram(player));
 				button.setText("Stop Play Record");
 			}else{
 				edit.setText("Wrong directory.");	
@@ -35,10 +45,11 @@ public class MyActionListenerForPlayer implements ActionListener{
 		}
 	}
 	
-	public MyActionListenerForPlayer(Interface interf, JButton button, JTextField edit) {
+	public MyActionListenerForPlayer(Interface interf, JButton button, JTextField edit, JButton buttonRecorder) {
 		// TODO Auto-generated constructor stub
 		this.edit = edit;
 		this.interf = interf;
 		this.button = button;
+		this.buttonRecorder = buttonRecorder;
 	}
 }

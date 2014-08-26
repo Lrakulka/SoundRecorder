@@ -15,4 +15,6 @@ public class Optiums {
 	public static String FILE_RECORD_NAME = "D:/file";
 	public static final int THREAD_SLEEPING = 20;
 	public static final AudioFileFormat.Type FILE_TYPE = AudioFileFormat.Type.AU;
+	public static final int BUFF_SIZE = 2048;
+	public static final boolean DISABLES_BUTTONS = false;
 }

@@ -17,10 +17,10 @@ import soundDiagram.Optiums;
 import soundDiagram.Recorder;
 
 
-
+// Action Listener for button Record
 class MyActionListenerForRecord implements ActionListener {
 	private Interface interf;
-	private JButton button;
+	private JButton button, buttonPlayer;
 	private Recorder recorder;
     private JTextField edit;
     
@@ -31,23 +31,32 @@ class MyActionListenerForRecord implements ActionListener {
 			recorder.stopThread();
 			interf.deleteMyWindowListener();
 			button.setText("Start Recording Sound");
+			if(Optiums.DISABLES_BUTTONS)
+				buttonPlayer.setEnabled(true);
 		}else{			
+			if(Optiums.DISABLES_BUTTONS)
+				buttonPlayer.setEnabled(false);
 			AudioFormat audioFormat = new AudioFormat(   // http://pubs.opengroup.org/external/auformat.html
 	        		Optiums.ENCODING, Optiums.SAMPLE_RATE, 
 	                Optiums.SAMPLE_SIZE_IN_BITS, Optiums.CHENNELS, Optiums.FRAME_SIZE,
 	                Optiums.FRAME_RATE, Optiums.BIG_ENDIAN);
-			
-				try {
-					if(edit.getText().lastIndexOf("/") != -1)
-						new File(edit.getText().substring(0 , edit.getText().lastIndexOf("/"))).mkdirs();
-					new File(edit.getText() + Optiums.FILE_TYPE).createNewFile();     // Need fix stupid checking
-					Optiums.FILE_RECORD_NAME = edit.getText();	
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					Optiums.FILE_RECORD_NAME += "!";
-					edit.setText("Wrong directory. Record to " + Optiums.FILE_RECORD_NAME);	
-				}
-					
+			File f = new File(edit.getText() + "." + Optiums.FILE_TYPE);
+			try{
+				if(f.exists())
+					if(f.getParentFile().exists()){
+						if(f.getParentFile().mkdirs())
+							f.createNewFile();
+						else throw new Exception();
+					}
+					else f.createNewFile();
+				else throw new Exception();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				Optiums.FILE_RECORD_NAME += "!";
+				edit.setText("Wrong directory. Record to " + Optiums.FILE_RECORD_NAME);	
+				e.printStackTrace();
+			}
+				
 	        DataLine.Info info = new DataLine.Info(TargetDataLine.class, audioFormat);
 	        TargetDataLine targetDataLine = null;
 	        try
@@ -57,22 +66,22 @@ class MyActionListenerForRecord implements ActionListener {
 	        }
 	        catch (LineUnavailableException e)
 	        {
-	            System.out.println("unable to get a recording line");
+	            edit.setText("Unable to get a recording line");
 	            e.printStackTrace();
-	            System.exit(1);
 	        }
 
 	        AudioFileFormat.Type targetType = Optiums.FILE_TYPE;
 			recorder = new Recorder(targetDataLine,targetType);			
-			recorder.start(interf.DataSourthForDiagram(recorder));  //
+			recorder.start(interf.DataSourthForDiagram(recorder));  //Bind recorder with Interface
 			button.setText("Stop Recording Sound");
 		}
 	}
 	
-	public MyActionListenerForRecord(Interface interf, JButton button, JTextField edit) {
+	public MyActionListenerForRecord(Interface interf, JButton button, JTextField edit, JButton buttonPlayer) {
 		// TODO Auto-generated constructor stub
 		this.edit = edit;
 		this.interf = interf;
 		this.button = button;
+		this.buttonPlayer = buttonPlayer;
 	}
 }

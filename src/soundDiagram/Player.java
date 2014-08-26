@@ -2,68 +2,81 @@ package soundDiagram;
 import java.io.File;
 import java.io.IOException;
 
+import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine.Info;
 import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.sound.sampled.SourceDataLine;
 import javax.swing.JButton;
 
 import userInterface.Interface;
 
 
 public class Player extends Thread implements StopThread{
-	private File fileDir;
 	private Interface interf;
-	private Clip clip;
 	private JButton button;
+	private SourceDataLine line = null; 
+	private AudioInputStream ais = null;
+	private byte[] buff;
+	private Info info;
+	private AudioFormat af;
 	
-	public Player(File fileDir, JButton button) {
+	public Player(File fileDir, JButton button) throws Exception {
 		// TODO Auto-generated constructor stub
-		this.fileDir = fileDir;
 		this.button = button;
+		buff = new byte[Optiums.BUFF_SIZE];
+		ais = AudioSystem.getAudioInputStream(fileDir);
+		af = ais.getFormat () ;
+		info = new Info(SourceDataLine.class, af);
+		if (!AudioSystem.isLineSupported(info)){
+			throw new Exception("Line is not supported");
+		}
 	}
 	
 	 public void start(Interface interf){
 	    	this.interf = interf;
-	       // super.start();
 	    	super.start();
 	    }
 	 
 	public void run(){
 		try{
-		    
-		    //Получаем AudioInputStream
-		    //Вот тут могут полететь IOException и UnsupportedAudioFileException
-		    AudioInputStream ais = AudioSystem.getAudioInputStream(fileDir);
-		    
-		    //Получаем реализацию интерфейса Clip
-		    //Может выкинуть LineUnavailableException
-		    clip = AudioSystem.getClip();
-		    
-		    //Загружаем наш звуковой поток в Clip
-		    //Может выкинуть IOException и LineUnavailableException
-		    clip.open(ais);
-		    clip.setFramePosition(0); //устанавливаем указатель на старт
-		    clip.start(); //Поехали!!!
-		
-		    //Если не запущено других потоков, то стоит подождать, пока клип не закончится
-		        //В GUI-приложениях следующие 3 строчки не понадобятся
-		    Thread.sleep(clip.getMicrosecondLength()/1000);
-		    stopThread();
+			line = (SourceDataLine)AudioSystem.getLine(info);
+			line.open(af);
+			line.start(); 
+			int num = 0;
+			while((ais != null) && ( num = ais.read(buff)) != -1){
+				{
+					interf.updateDiagram(buff);
+					line.write(buff, 0, num);
+				}
+			}
+			line.drain();
+		}catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (LineUnavailableException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		if(ais != null){
+			stopThread();		
 		    button.setText("Start Recording Sound");
 		    interf.deleteMyWindowListener();
-		   // clip.stop(); //Останавливаем
-		   // clip.close(); //Закрываем
-		} catch(IOException | UnsupportedAudioFileException | LineUnavailableException exc) {
-		    exc.printStackTrace();
-		} catch (InterruptedException exc) {}
+		}
 	}
-
+	
 	@Override
 	public void stopThread() {
 		// TODO Auto-generated method stub
-		clip.stop(); //Останавливаем
-	    clip.close(); //Закрываем
+		try {
+			ais.close();
+			ais = null;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		line.stop();
+		line.close(); 
 	}
 }

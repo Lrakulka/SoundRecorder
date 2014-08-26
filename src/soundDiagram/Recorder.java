@@ -21,6 +21,7 @@ public class Recorder extends Thread implements StopThread{
     private Interface interf;
     private OutputStream outpuStream;
     private FileOutputStream recordFile;
+    private byte []buff;
     
     public Recorder(TargetDataLine m_line, Type m_targetType) {
         this.m_line = m_line;
@@ -37,18 +38,27 @@ public class Recorder extends Thread implements StopThread{
     public void run(){  		
         try
         {
-        	recordFile = new FileOutputStream(new File(Optiums.FILE_RECORD_NAME + "." + m_targetType.toString().toLowerCase()));
+        	buff = new byte[Optiums.BUFF_SIZE];
+        	recordFile = new FileOutputStream(new File(Optiums.FILE_RECORD_NAME + "." + 
+        										m_targetType.toString().toLowerCase()));
         	outpuStream = new OutputStream() {
-        		byte l = 0;        		
+        		private byte l = 0;        
+        		private int buffFill = 0;
         		@Override
 				public void write(int arg0) throws IOException {
 					// TODO Auto-generated method stub
-        			if(m_line.isRunning())
+        			if(m_line.isRunning()){
         				recordFile.write(arg0);
-					if(l > 24){
-						interf.updateDiagram(arg0);
-					}
-					else{ 
+        				buff[buffFill] = (byte) arg0;
+        				buffFill++;
+        			}
+        			if(buffFill == Optiums.BUFF_SIZE - 1){
+        				 /* Work faster than class Player function update. 
+        				That is why diagrams of same files can have little differences.*/
+        				interf.updateDiagram(buff);
+        				buffFill = 0;
+        			}
+					if(l < 24){					
 	        			recordFile.write(arg0);  // Write magic numbers
 	        			l++;
 					}
