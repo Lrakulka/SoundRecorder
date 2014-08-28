@@ -2,6 +2,7 @@ package userInterface;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Insets;
+import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,7 +18,7 @@ public class Interface extends Thread{
     private boolean status;
     private byte[][] buff;
 	private int lengthBuff;
-	private int arg;
+	private int maxBuffersSize;
 	private StopThread stopInputStream;
 	private MyWindowListener myWindowListener;
 	
@@ -36,7 +37,7 @@ public class Interface extends Thread{
     	JButton buttonStartPlay = new JButton("Start Play Record");
     	buttonStartPlay.setPreferredSize(new Dimension(200, 50));    	
     	
-    	JButton buttonRecordStar = new JButton("Start Record Sound");
+    	JButton buttonRecordStar = new JButton("Start Recording");
     	buttonRecordStar.setPreferredSize(new Dimension(200, 50));
     	
     	buttonRecordStar.addActionListener(new MyActionListenerForRecord(this, buttonRecordStar, 
@@ -62,9 +63,13 @@ public class Interface extends Thread{
     }
     
 	public void run(){		
+		byte []diagramBuff;
 	    for(;status;){		    	
-	    	drawDiagram.makeCanvas();
-	    	drawDiagram.refresh(getArgs());
+	    	diagramBuff = getDiagramBuffs();
+	    	if(diagramBuff != null){
+		    	drawDiagram.makeCanvas();
+		    	drawDiagram.refresh(diagramBuff);
+	    	}
 	    	try {
 				Thread.sleep(Optiums.THREAD_SLEEPING);
 			} catch (InterruptedException e) {
@@ -75,26 +80,36 @@ public class Interface extends Thread{
 	}
 	
 	public void updateDiagram(byte[] buff){
-		this.buff[lengthBuff] = buff;
+		this.buff[lengthBuff] = new byte[Optiums.BUFF_SIZE];
+		this.buff[lengthBuff] = Arrays.copyOf(buff, Optiums.BUFF_SIZE);
 		lengthBuff++;
+		if(lengthBuff == maxBuffersSize)
+			lengthBuff = 0;
 	}
 	
-	//Prepare data for diagram
-	private int getArgs(){
-		//-------//
-		if(lengthBuff != 0 && buff != null)
-			arg = (int) buff[lengthBuff - 1][0];
-		else arg = 0;
+	//Prepare data for diagram. Need uses algorithm "Swinging Door"
+	private byte[] getDiagramBuffs(){
+		byte []diagramBuff = new byte[Optiums.DIAGRAM_BUFF];
+		if(lengthBuff != 0 && buff != null){
+			int needCoffe = Optiums.DIAGRAM_BUFF / lengthBuff;
+			needCoffe = Optiums.BUFF_SIZE / needCoffe;
+			for(int i = 0 , l = 0; i < lengthBuff; ++i)
+				for(int j = 0; j < Optiums.BUFF_SIZE - needCoffe; j += needCoffe, l++)
+					diagramBuff[l] = buff[i][j];
+			lengthBuff = 0;
+			return diagramBuff;
+		}
 		lengthBuff = 0;
-		//-------//
-		return arg;
+		return null;
 	}
+	
 	
 	// Bind input data from recorder or player with diagram. Gives interface method for closing thread. 
 	public Interface DataSourthForDiagram(StopThread stopInputStream){
 		// Size of data store buffer
-    	int l = 1000 * Optiums.SAMPLE_RATE / (Optiums.THREAD_SLEEPING * Optiums.BUFF_SIZE);
-    	buff = new byte[(int) (l + l * 0.2)][];
+    	maxBuffersSize = 5 + (int) (Optiums.SAMPLE_RATE / 1000 * 
+    			Optiums.THREAD_SLEEPING) / Optiums.BUFF_SIZE;
+    	buff = new byte[maxBuffersSize][];
     	this.stopInputStream = stopInputStream;
     	myWindowListener = new MyWindowListener(this);
     	frame.addWindowListener(myWindowListener);

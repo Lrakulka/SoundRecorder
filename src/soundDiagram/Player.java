@@ -15,16 +15,17 @@ import userInterface.Interface;
 
 public class Player extends Thread implements StopThread{
 	private Interface interf;
-	private JButton button;
+	private JButton button, buttonRecorder;
 	private SourceDataLine line = null; 
 	private AudioInputStream ais = null;
 	private byte[] buff;
 	private Info info;
 	private AudioFormat af;
 	
-	public Player(File fileDir, JButton button) throws Exception {
+	public Player(File fileDir, JButton button, JButton buttonRecorder) throws Exception {
 		// TODO Auto-generated constructor stub
 		this.button = button;
+		this.buttonRecorder = buttonRecorder;
 		buff = new byte[Optiums.BUFF_SIZE];
 		ais = AudioSystem.getAudioInputStream(fileDir);
 		af = ais.getFormat () ;
@@ -62,6 +63,8 @@ public class Player extends Thread implements StopThread{
 		if(ais != null){
 			stopThread();		
 		    button.setText("Start Recording Sound");
+		    if(Optiums.DISABLES_BUTTONS)
+		    	buttonRecorder.setEnabled(true);
 		    interf.deleteMyWindowListener();
 		}
 	}
@@ -70,8 +73,10 @@ public class Player extends Thread implements StopThread{
 	public void stopThread() {
 		// TODO Auto-generated method stub
 		try {
-			ais.close();
-			ais = null;
+			if(ais != null){
+				ais.close();
+				ais = null;
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

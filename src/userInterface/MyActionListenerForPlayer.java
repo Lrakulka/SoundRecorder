@@ -32,15 +32,20 @@ public class MyActionListenerForPlayer implements ActionListener{
 			File fileDir = new File(edit.getText() +"." +  Optiums.FILE_TYPE.toString().toLowerCase());
 			if(fileDir.exists()){
 				try {
-					player = new Player(fileDir, button);
+					player = new Player(fileDir, button, buttonRecorder);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					//e.printStackTrace();
+					edit.setText("Something go wrong.");
+					if(Optiums.DISABLES_BUTTONS)
+						buttonRecorder.setEnabled(true);
 				}
 				player.start(interf.DataSourthForDiagram(player));
 				button.setText("Stop Play Record");
 			}else{
 				edit.setText("Wrong directory.");	
+				if(Optiums.DISABLES_BUTTONS)
+					buttonRecorder.setEnabled(true);
 			}
 		}
 	}
